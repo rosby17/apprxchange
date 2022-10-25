@@ -23,24 +23,24 @@ class Home extends StatelessWidget {
             child: IconButton(
               onPressed: () {
                 var route = MaterialPageRoute(builder: (BuildContext context) {
-                  return profil();
+                  return const profil();
                 });
                 Navigator.of(context).push(route);
               },
-              icon: Icon(
+              icon: const Icon(
                 Icons.person,
                 color: kWhite,
               ),
             ),
           ),
         ),
-        title: Text(''),
+        title: const Text(''),
         actions: [
           IconButton(
             onPressed: () {
-              SupportAgent();
+              const SupportAgent();
             },
-            icon: Icon(
+            icon: const Icon(
               Icons.support_agent_rounded,
               color: kWhite,
             ),
@@ -55,9 +55,9 @@ class Home extends StatelessWidget {
                   padding: const EdgeInsets.only(right: 8.0),
                   child: IconButton(
                     onPressed: () {
-                      Notification();
+                      const Notification();
                     },
-                    icon: Icon(Icons.notifications, color: kWhite),
+                    icon: const Icon(Icons.notifications, color: kWhite),
                   ),
                 ),
                 Positioned(
@@ -72,7 +72,7 @@ class Home extends StatelessWidget {
                         borderRadius: BorderRadius.circular(100.0),
                         color: kRouge,
                       ),
-                      child: Center(child: Text('3')),
+                      child: const Center(child: Text('3')),
                     ),
                   ),
                 ),
@@ -87,67 +87,73 @@ class Home extends StatelessWidget {
             scrollDirection: Axis.vertical,
             child: Column(
               children: [
-                SizedBox(height: 25),
-                CarouselSlide(),
-                SizedBox(height: 25),
+                const SizedBox(height: 25),
+                // CarouselSlide(),
+                const SizedBox(height: 25),
                 Container(
                   height: size.height * 0.12,
                   padding: const EdgeInsets.only(top: 6.0),
-                  decoration: BoxDecoration(
+                  decoration: const BoxDecoration(
                       // color: Colors.black12,
                       ),
                   child: Row(
                       mainAxisAlignment: MainAxisAlignment.spaceAround,
                       crossAxisAlignment: CrossAxisAlignment.center,
+                      // ignore: prefer_const_literals_to_create_immutables
                       children: [
                         carreBoutton(
                           couleur: kVertsombre,
                           text: 'Achat',
-                          icone: Icon(
+                          icone: const Icon(
                             Icons.money_off_sharp,
                             color: kWhite,
                             size: 40,
                           ),
+                          onPressed: () {},
                         ),
                         carreBoutton(
                           couleur: kRouge,
                           text: 'Vente',
-                          icone: Icon(
+                          icone: const Icon(
                             Icons.sell,
                             color: kWhite,
                             size: 40,
                           ),
+                          onPressed: () {},
                         ),
                         carreBoutton(
                           couleur: kJaunesombre,
                           text: 'Envoyer',
-                          icone: Icon(
+                          icone: const Icon(
                             Icons.file_upload,
                             color: kWhite,
                             size: 40,
                           ),
+                          onPressed: () {},
                         ),
                         carreBoutton(
                           couleur: Colors.blue,
                           text: 'Recevoir',
-                          icone: Icon(
+                          icone: const Icon(
                             Icons.file_download,
                             color: kWhite,
                             size: 40,
                           ),
+                          onPressed: () {},
                         ),
                         carreBoutton(
                           couleur: kViolet,
                           text: 'Convertir',
-                          icone: Icon(
+                          icone: const Icon(
                             Icons.stay_current_landscape,
                             color: kWhite,
                             size: 40,
                           ),
+                          onPressed: () {},
                         ),
                       ]),
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 20,
                 ),
                 Container(
@@ -168,7 +174,7 @@ class Home extends StatelessWidget {
                     height: size.height * 0.15,
                     width: size.width * 0.30,
                     decoration: BoxDecoration(
-                      image: DecorationImage(
+                      image: const DecorationImage(
                         image: AssetImage("assets/images/parrainage.png"),
                         // fit: BoxFit.fill,
                       ),
@@ -193,7 +199,7 @@ class Home extends StatelessWidget {
                             ),
                           ),
                         ),
-                        SizedBox(
+                        const SizedBox(
                           width: 10,
                         ),
                         Container(
@@ -210,7 +216,7 @@ class Home extends StatelessWidget {
                           ),
                           child: Column(
                             children: [
-                              SizedBox(
+                              const SizedBox(
                                 height: 20,
                               ),
                               Padding(
@@ -233,8 +239,8 @@ class Home extends StatelessWidget {
                               // SizedBox(
                               //   height: 20,
                               // ),
-                              Padding(
-                                padding: const EdgeInsets.all(20.0),
+                              const Padding(
+                                padding: EdgeInsets.all(20.0),
                                 child: Text(
                                   "Gagnez 15% de commission pour chaque fileuls qui s'inscrit sur RXchange via votre lien de parainnage",
                                   style: kStylepetittexte,

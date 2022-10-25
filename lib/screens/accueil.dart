@@ -3,7 +3,7 @@ import 'package:rx_change_3/palette.dart';
 import 'package:rx_change_3/screens/screen.dart';
 
 class Accueil extends StatefulWidget {
-  Accueil({Key? key}) : super(key: key);
+  const Accueil({Key? key}) : super(key: key);
 
   @override
   State<Accueil> createState() => _AccueilState();
@@ -14,9 +14,9 @@ class _AccueilState extends State<Accueil> {
   int _id = 0;
 
   static List<Widget> pageOptions = <Widget>[
-    Home(),
+    const Home(),
     Transaction(),
-    Market(),
+    const Market(),
     Actualites(),
     Portefeuille(),
   ];
@@ -42,12 +42,12 @@ class _AccueilState extends State<Accueil> {
         label: "Marché",
       ),
     );
-    _item.add(
-      const BottomNavigationBarItem(
-        icon: Icon(Icons.pages_outlined),
-        label: "Actualité",
-      ),
-    );
+    // _item.add(
+    // const BottomNavigationBarItem(
+    //   icon: Icon(Icons.pages_outlined),
+    //    label: "Actualité",
+    //   ),
+    // );
     _item.add(
       const BottomNavigationBarItem(
         icon: Icon(Icons.account_balance_wallet),
