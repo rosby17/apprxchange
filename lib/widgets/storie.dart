@@ -38,6 +38,7 @@ class _CarouselSlideState extends State<CarouselSlide> {
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
 
+    // ignore: avoid_unnecessary_containers
     return Container(
       child: CarouselSlider(
         options: CarouselOptions(),
@@ -46,11 +47,11 @@ class _CarouselSlideState extends State<CarouselSlide> {
             height: size.height * 0.5,
             width: size.width,
             margin: EdgeInsets.all(10),
-            padding: EdgeInsets.only(top: 10),
+            padding: const EdgeInsets.only(top: 10),
             decoration: BoxDecoration(
               color: kVertclair,
               borderRadius: BorderRadius.circular(20),
-              gradient: LinearGradient(
+              gradient: const LinearGradient(
                 end: Alignment.topCenter,
                 begin: Alignment.bottomCenter,
                 colors: [kJauneclair, Colors.transparent],
@@ -58,7 +59,8 @@ class _CarouselSlideState extends State<CarouselSlide> {
               image: DecorationImage(
                 image: AssetImage(x["photo"]),
                 fit: BoxFit.fill,
-                colorFilter: ColorFilter.mode(Colors.black54, BlendMode.darken),
+                colorFilter:
+                    const ColorFilter.mode(Colors.black54, BlendMode.darken),
               ),
             ),
             child: Column(
@@ -69,10 +71,10 @@ class _CarouselSlideState extends State<CarouselSlide> {
                   child: Column(
                     children: [
                       Text(x["texte"], style: kBodyStyleBouton3),
-                      SizedBox(height: 4),
+                      const SizedBox(height: 4),
                       Text(
                         x["description"],
-                        style: TextStyle(
+                        style: const TextStyle(
                           fontSize: 8,
                           color: kWhite,
                           fontFamily: "Poppins-Medium",
@@ -82,7 +84,7 @@ class _CarouselSlideState extends State<CarouselSlide> {
                     ],
                   ),
                 ),
-                FlatButton(
+                MaterialButton(
                   onPressed: () {
                     var route =
                         MaterialPageRoute(builder: (BuildContext context) {
