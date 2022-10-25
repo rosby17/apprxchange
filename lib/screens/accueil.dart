@@ -12,7 +12,6 @@ class Accueil extends StatefulWidget {
 class _AccueilState extends State<Accueil> {
   late List<BottomNavigationBarItem> _item;
   int _id = 0;
-
   static List<Widget> pageOptions = <Widget>[
     const Home(),
     Transaction(),
@@ -21,6 +20,7 @@ class _AccueilState extends State<Accueil> {
     Portefeuille(),
   ];
 
+  @override
   void initState() {
     super.initState();
     _item = [];
@@ -33,13 +33,13 @@ class _AccueilState extends State<Accueil> {
     _item.add(
       const BottomNavigationBarItem(
         icon: Icon(Icons.compare_arrows_outlined),
-        label: "Transactions",
+        label: "Actions",
       ),
     );
     _item.add(
       const BottomNavigationBarItem(
         icon: Icon(Icons.auto_graph_sharp),
-        label: "Marché",
+        label: "Historique",
       ),
     );
     // _item.add(

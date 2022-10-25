@@ -6,7 +6,7 @@ import 'package:rx_change_3/palette.dart';
 import 'package:rx_change_3/widgets/widgets.dart';
 
 class SignUp extends StatefulWidget {
-  SignUp({Key? key}) : super(key: key);
+  const SignUp({Key? key}) : super(key: key);
 
   @override
   State<SignUp> createState() => _SignUpState();
@@ -105,7 +105,7 @@ class _SignUpState extends State<SignUp> {
                             style: kBodyStyleZoneX,
                             keyboardType: TextInputType.name,
                             textInputAction: TextInputAction.next,
-                            validator: (val) => val!.length == 0
+                            validator: (val) => val!.isEmpty
                                 ? "Veuillez renseigner votre pseudo "
                                 : null,
                             onChanged: (val) => user,
@@ -117,7 +117,7 @@ class _SignUpState extends State<SignUp> {
                           padding: const EdgeInsets.only(
                               left: 5.0, right: 30.0, bottom: 10.0),
                           child: TextFormField(
-                            validator: (val) => val!.length == 0
+                            validator: (val) => val!.isEmpty
                                 ? "Veuillez completer ce champs "
                                 : null,
                             onChanged: (val) => email,

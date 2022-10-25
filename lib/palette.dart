@@ -87,37 +87,3 @@ const TextStyle kStylepetittexte2 = TextStyle(
 
 
 
-
-// class MyTheme {
-//   static final ThemeData defaultTheme = _buildTheme();
- 
-//   static ThemeData _buildTheme() {
-//     final ThemeData base = ThemeData.light();
- 
-//     return base.copyWith(
-//       accentColor: kVertsombre,
-//       accentColorBrightness: Brightness.dark,
-       
-//       primaryColor: kVertclair,
-//       primaryColorDark: kVertsombre,
-//       primaryColorLight: kJaunesombre,
-//       primaryColorBrightness: Brightness.dark,
- 
-//       buttonTheme: base.buttonTheme.copyWith(
-//         buttonColor: kJaunesombre,
-//         textTheme: ButtonTextTheme.primary,
-//       ),
-       
-//       scaffoldBackgroundColor: kViolet
-//       cardColor: kVertsombre,
-//       textSelectionColor: PrimaryColorLight,
-//       backgroundColor:kVertsombre,
-       
-//       textTheme: base.textTheme.copyWith(
-//         title: base.textTheme.title.copyWith(color: kWhite),
-//         body1: base.textTheme.body1.copyWith(color: kWhite),
-//         body2: base.textTheme.body2.copyWith(color: kWhite)
-//       ),
-//     );
-//   }
-// }
