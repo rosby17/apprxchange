@@ -14,7 +14,7 @@ class _AccueilState extends State<Accueil> {
   int _id = 0;
   static List<Widget> pageOptions = <Widget>[
     const Home(),
-    Transaction(),
+    const TheAction(),
     const Market(),
     Actualites(),
     Portefeuille(),
