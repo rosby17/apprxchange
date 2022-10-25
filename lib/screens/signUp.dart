@@ -219,7 +219,7 @@ class _SignUpState extends State<SignUp> {
                           children: [
                             const Text('Vous avez déjà un compte? ',
                                 style: kStylepetittexte2),
-                            FlatButton(
+                            MaterialButton(
                               onPressed: () {
                                 Navigator.pushNamed(context, "Connectez-vous");
                               },

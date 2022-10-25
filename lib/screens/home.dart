@@ -3,7 +3,6 @@
 import 'package:flutter/material.dart';
 import 'package:rx_change_3/screens/screen.dart';
 import 'package:rx_change_3/palette.dart';
-import 'package:rx_change_3/widgets/bouton.dart';
 
 class Home extends StatelessWidget {
   const Home({

@@ -27,7 +27,7 @@ class Bouton extends StatelessWidget {
         borderRadius: BorderRadius.circular(20),
         color: couleurs,
       ),
-      child: FlatButton(
+      child: MaterialButton(
         onPressed: onPressed,
         child: Text(
           buttonName,
