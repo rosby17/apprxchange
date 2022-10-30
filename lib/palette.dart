@@ -79,11 +79,8 @@ const TextStyle kStylepetittexte = TextStyle(
   fontWeight: FontWeight.w500,
 );
 const TextStyle kStylepetittexte2 = TextStyle(
-  fontSize: 12,
+  fontSize: 11,
   color: kWhite,
   fontFamily: "Poppins-Medium",
   fontWeight: FontWeight.w500,
 );
-
-
-

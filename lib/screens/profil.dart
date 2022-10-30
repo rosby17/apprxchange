@@ -11,18 +11,20 @@ class profil extends StatelessWidget {
       appBar: AppBar(
         backgroundColor: kVertclair,
         elevation: 0,
-        title: Text('Retour', style: kBodyStyleBouton2),
+        title: const Text('Retour', style: kBodyStyleBouton2),
       ),
-      body: Column(
-        children: [
-          Container(
-            height: 150,
-            color: kVertclair,
-            child: MenuSection(),
-          ),
-          InfoGenerales(),
-          VerificationIdentite(),
-        ],
+      body: SingleChildScrollView(
+        child: Column(
+          children: [
+            Container(
+              height: 150,
+              color: kVertclair,
+              child: MenuSection(),
+            ),
+            InfoGenerales(),
+            const VerificationIdentite(),
+          ],
+        ),
       ),
     );
   }
