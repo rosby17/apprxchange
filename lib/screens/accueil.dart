@@ -16,7 +16,7 @@ class _AccueilState extends State<Accueil> {
     const Home(),
     const TheAction(),
     const Market(),
-    Actualites(),
+    const Actualites(),
     Portefeuille(),
   ];
 
