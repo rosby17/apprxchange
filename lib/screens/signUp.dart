@@ -213,7 +213,7 @@ class _SignUpState extends State<SignUp> {
                         height: 10,
                       ),
                       Padding(
-                        padding: const EdgeInsets.only(left: 55.0),
+                        padding: const EdgeInsets.only(left: 50.0),
                         child: Row(
                           // mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
