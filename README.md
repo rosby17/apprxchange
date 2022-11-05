@@ -1,9 +1,15 @@
 # rx_change_3
 
-A new Flutter project.
+Prerequis: 
 
+- installer flutter   3.3.6
+- avoir ganache
+- truffle
+- Git 
 ## Getting Started
+Pour recuperer le projet taper la commande:
 
+git clone https://github.com/rosby17/apprxchange.git
 This project is a starting point for a Flutter application.
 
 A few resources to get you started if this is your first Flutter project:
