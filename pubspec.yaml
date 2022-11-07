@@ -31,45 +31,34 @@ dependencies:
     sdk: flutter
 
 
-  # carousel_slider: ^1.3.0
+
   flutter_carousel_slider: ^1.0.8
   carousel_slider: ^4.0.0
   provider: ^4.3.3
-  web3dart: ^1.2.3
-  web_socket_channel: ^1.2.0
-  # firebase plugin
-  # firebase_core: "0.5.2"
-  # firebase_auth: "^0.18.3"
-  # provider: ^4.3.2+2
-  # cloud_firestore: ^0.14.3
+  # dio: ^4.0.4
+  # intl: ^0.16.1
+  flutter_lints: ^2.0.0
+  flutter_dotenv: ^5.0.2
+  flutter_riverpod: ^1.0.3
+  flutter_svg: ^0.22.0
+  google_fonts: ^2.1.0
+  http: ^0.13.4
+  shared_preferences: ^2.0.11
+  web3dart: ^2.3.5
+  web_socket_channel: ^2.1.0
+  firebase_core: ^1.13.1
+  cupertino_icons: ^1.0.2
+  syncfusion_flutter_sliders: ^19.4.56
+  # sqflite: any
+  # path: any
   # font_awesome_flutter: ^8.10.0
   # API plugin
   # telephony:
+  # country_pickers: ^1.3.0 pour appeler les drapeaus des pays
   # advanced_ussd:
   # flutter_background_service:
   # alarm_service:
-  http: ^0.13.4
-  dio: ^4.0.4
-
-  #projet externe ajout
-  bezier_chart: ^1.0.17+1
-  intl: ^0.16.1
-  #intl_phone_field: ^1.4.2
-  flutter_lints: ^2.0.0
-  sqflite: any
-  path: any
-  firebase_core: ^1.13.1
-  # firebase_auth: any
-  # cloud_firestore: ^3.1.10
-  # fluttertoast: ^7.1.6
-  # keyboard_dismisser: ^2.0.1
-  # image_picker: ^0.8.4+11
-  # firebase_storage: ^10.2.9
-
-  # The following adds the Cupertino Icons font to your application.
-  # Use with the CupertinoIcons class for iOS style icons.
-  cupertino_icons: ^1.0.2
-  web_socket_channel: ^2.2.0
+  # intl_phone_field: ^1.4.2
 
 dev_dependencies:
   flutter_test:
@@ -100,7 +89,9 @@ flutter:
     - assets/images/
     - assets/images/photos/
     - assets/photoClient/
-
+    - src/artifacts/Crypto.json
+    - src/artifacts/Investment.json
+    - .env
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware
