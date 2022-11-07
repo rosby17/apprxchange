@@ -15,9 +15,7 @@ class EthereumUtils {
     httpClient = http.Client();
     String ganachehttpApi = "https://127.0.0.1:7545";
     String ganachewsApi = "ws://127.0.0.1:7545";
-    web3client = Web3Client(ganachehttpApi, httpClient, socketConnector: () {
-      return IOWebSocketChannel.connect(ganachewsApi).cast().String[];
-    });
+    web3client = Web3Client(ganachehttpApi, httpClient);
   }
 
   Future getBalance() async {
