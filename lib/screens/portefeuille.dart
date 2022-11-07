@@ -17,13 +17,14 @@ class _PortefeuilleState extends State<Portefeuille> {
 
   double? _value = 0.0;
 
-  var _data;
+  // ignore: prefer_typing_uninitialized_variables
+  var data;
 
   @override
   void initState() {
     ethUtils.initial();
     ethUtils.getBalance().then((value) {
-      _data = value;
+      data = value;
       setState(() {});
     });
     super.initState();
@@ -32,9 +33,9 @@ class _PortefeuilleState extends State<Portefeuille> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: const EdgeInsets.symmetric(horizontal: 20, vertical: 150),
+      margin: const EdgeInsets.symmetric(horizontal: 20, vertical: 130),
       child: Column(
-        mainAxisAlignment: MainAxisAlignment.spaceAround,
+        // mainAxisAlignment: MainAxisAlignment.spaceAround,
         children: [
           Container(
             width: MediaQuery.of(context).size.width,
@@ -50,7 +51,7 @@ class _PortefeuilleState extends State<Portefeuille> {
                 child: Column(children: [
                   const Text('Solde Principal',
                       style: TextStyle(
-                        fontSize: 30,
+                        fontSize: 20,
                         color: kWhite,
                         fontFamily: "Poppins-Medium",
                         fontWeight: FontWeight.w700,
@@ -58,11 +59,11 @@ class _PortefeuilleState extends State<Portefeuille> {
                   const SizedBox(
                     height: 9,
                   ),
-                  _data == null
+                  data == null
                       ? const CircularProgressIndicator()
-                      : Text("${_data} USD",
+                      : Text("$data USD",
                           style: const TextStyle(
-                            fontSize: 30,
+                            fontSize: 20,
                             color: kWhite,
                             fontFamily: "Poppins-Medium",
                             fontWeight: FontWeight.w300,
@@ -90,19 +91,19 @@ class _PortefeuilleState extends State<Portefeuille> {
             max: 10.0,
           ),
           const SizedBox(
-            height: 40,
+            height: 50,
           ),
           ButtonContainer(
               title: "Voir le solde ",
               color: kJauneclair,
               onTap: () {
                 ethUtils.getBalance().then((value) {
-                  _data = value;
+                  data = value;
                   setState(() {});
                 });
               }),
           const SizedBox(
-            height: 40,
+            height: 50,
           ),
           ButtonContainer(
               title: "Envoyer",
@@ -116,7 +117,7 @@ class _PortefeuilleState extends State<Portefeuille> {
                 }
               }),
           const SizedBox(
-            height: 40,
+            height: 50,
           ),
           ButtonContainer(
               title: "Retirer",
