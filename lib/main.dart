@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:rx_change_3/palette.dart';
 import 'screens/screen.dart';
 
-void main() {
+Future main() async {
+  await dotenv.load(fileName: ".env");
   runApp(
     MaterialApp(
       debugShowCheckedModeBanner: false,
@@ -13,7 +15,7 @@ void main() {
       ),
       initialRoute: '/',
       routes: {
-        '/': (context) => SignUp(),
+        '/': (context) => const Login(),
         'Connectez-vous': (context) => const Login(),
         'Mot de passe oublié': (context) => const ForgotPassword(),
         'Creer un compte': (context) => const SignUp(),

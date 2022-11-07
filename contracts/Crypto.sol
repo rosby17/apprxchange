@@ -3,21 +3,21 @@ pragma solidity >=0.7.0 <0.9.0;
 
 
 contract Crypto {
-    int balance;
+    uint balance;
 
     constructor() {
         balance = 0;
     }
 
-    function depositBalance(int amount) public {
+    function depositBalance(uint amount) public {
         balance += amount;
     }
   
-    function withdrawBalance(int amount) public{
+    function withdrawBalance(uint amount) public{
         require(balance > amount, "Vous navez pas assez de fond");
         balance -= amount;
     }
-      function getBalance() view public returns (int) {
+      function getBalance() view public returns (uint) {
         return balance;
     }
 }
