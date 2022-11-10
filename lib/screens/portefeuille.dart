@@ -18,13 +18,13 @@ class _PortefeuilleState extends State<Portefeuille> {
   double? _value = 0.0;
 
   // ignore: prefer_typing_uninitialized_variables
-  var data;
+  var _data;
 
   @override
   void initState() {
     ethUtils.initial();
     ethUtils.getBalance().then((value) {
-      data = value;
+      _data = value;
       setState(() {});
     });
     super.initState();
@@ -59,9 +59,9 @@ class _PortefeuilleState extends State<Portefeuille> {
                   const SizedBox(
                     height: 9,
                   ),
-                  data == null
+                  _data == null
                       ? const CircularProgressIndicator()
-                      : Text("$data USD",
+                      : Text("$_data USD",
                           style: const TextStyle(
                             fontSize: 20,
                             color: kWhite,
@@ -98,7 +98,7 @@ class _PortefeuilleState extends State<Portefeuille> {
               color: kJauneclair,
               onTap: () {
                 ethUtils.getBalance().then((value) {
-                  data = value;
+                  _data = value;
                   setState(() {});
                 });
               }),

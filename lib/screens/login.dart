@@ -1,6 +1,7 @@
 // ignore_for_file: unused_local_variable
 
 import 'package:flutter/material.dart';
+// import 'package:flutter_signin_button/flutter_signin_button.dart';
 // import 'package:rxchange/screens/screen.dart';
 import 'package:rx_change_3/widgets/widgets.dart';
 import '../palette.dart';
@@ -106,6 +107,15 @@ class Login extends StatelessWidget {
                           Navigator.pushNamed(context, 'Creer un compte');
                         },
                       ),
+                      // SignInButton(
+                      //   Buttons.Google,
+                      //   onPressed: () {},
+                      // ),
+                      // SignInButton(
+                      //   Buttons.Google,
+                      //   text: "Sign up with Google",
+                      //   onPressed: () {},
+                      // )
                     ],
                   ),
                   const SizedBox(

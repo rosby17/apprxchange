@@ -15,11 +15,12 @@ Future main() async {
       ),
       initialRoute: '/',
       routes: {
-        '/': (context) => const Login(),
+        '/': (context) => const LoginprintApp(),
         'Connectez-vous': (context) => const Login(),
         'Mot de passe oublié': (context) => const ForgotPassword(),
         'Creer un compte': (context) => const SignUp(),
         'Se Connecter': (context) => const Accueil(),
+        'Authentifier': (context) => const Accueil(),
         'mail de validation': (context) => const ForgotPassword(),
       },
     ),
