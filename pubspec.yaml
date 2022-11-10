@@ -34,21 +34,24 @@ dependencies:
 
   flutter_carousel_slider: ^1.0.8
   carousel_slider: ^4.0.0
-  provider: ^4.3.3
+  provider: ^6.0.4
   # dio: ^4.0.4
   # intl: ^0.16.1
+  local_auth: ^2.1.2
   flutter_lints: ^2.0.0
   flutter_dotenv: ^5.0.2
-  flutter_riverpod: ^1.0.3
-  flutter_svg: ^0.22.0
-  google_fonts: ^2.1.0
+  flutter_riverpod: ^2.1.1
+  flutter_svg: ^1.1.6
+  google_fonts: ^3.0.1
   http: ^0.13.4
   shared_preferences: ^2.0.11
   web3dart: ^2.3.5
   web_socket_channel: ^2.1.0
-  firebase_core: ^1.13.1
   cupertino_icons: ^1.0.2
-  syncfusion_flutter_sliders: ^19.4.56
+  syncfusion_flutter_sliders: ^20.3.56
+  # firebase_auth: ^4.1.1
+  # flutter_signin_button: ^2.0.0
+  # firebase_dynamic_links: ^5.0.4
   # sqflite: any
   # path: any
   # font_awesome_flutter: ^8.10.0
@@ -71,7 +74,7 @@ dev_dependencies:
   # package. See that file for information about deactivating specific lint
   # rules and activating additional ones.
   # flutter_lints: ^1.0.0
-  flutter_native_splash: ^1.2.3
+  flutter_native_splash: ^2.2.14
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec
