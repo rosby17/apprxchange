@@ -39,205 +39,241 @@ class _SignUpState extends State<SignUp> {
     return Scaffold(
       backgroundColor: kVertsombre,
       body: Container(
+        height: size.height,
         decoration: const BoxDecoration(
+          // gradient: RG(),
           image: DecorationImage(
             image: AssetImage('assets/images/background.png'),
             fit: BoxFit.fill,
           ),
         ),
-        child: ListView(
-          children: <Widget>[
-            Container(
-              height: size.height * 0.2,
-              width: size.width * 0.1,
-              decoration: const BoxDecoration(
-                image: DecorationImage(
-                  image: AssetImage(
-                    'assets/images/rxchange_2blanc.png',
-                  ),
-                ),
-              ),
-            ),
-            Container(
-              margin: const EdgeInsets.only(top: 1),
-              child: const Center(
-                child: Text(
-                  'Sign Up',
-                  style: TextStyle(
-                    fontSize: 30,
-                    color: kWhite,
-                    fontFamily: "Poppins-SemiBold",
-                    fontWeight: FontWeight.w600,
-                  ),
-                ),
-              ),
-            ),
-            const SizedBox(
-              height: 20,
-            ),
-            Form(
-              key: formkey,
+        child: SafeArea(
+          child: Center(
+            child: SingleChildScrollView(
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
-                crossAxisAlignment: CrossAxisAlignment.center,
                 children: <Widget>[
-                  Container(
-                    // height: size.height * 0.48,
-                    width: size.width * 0.8,
-                    decoration: BoxDecoration(
+                  Image.asset(
+                    'assets/images/rxchange_2blanc.png',
+                    width: 200.0,
+                  ),
+                  const SizedBox(height: 50),
+                  const Text(
+                    'Sign Up',
+                    style: TextStyle(
+                      fontSize: 30,
                       color: kWhite,
-                      borderRadius: BorderRadius.circular(20),
+                      fontFamily: "Poppins-SemiBold",
+                      fontWeight: FontWeight.w600,
                     ),
+                  ),
+                  const SizedBox(height: 50),
+                  Form(
+                    key: formkey,
                     child: Column(
-                      children: [
-                        Padding(
-                          padding: const EdgeInsets.only(
-                              top: 10, left: 5.0, right: 30.0, bottom: 10.0),
-                          child: TextFormField(
-                            decoration: const InputDecoration(
-                              labelText: 'Pseudo',
-                              hintText: 'Entrez votre pseudo',
-                              hintStyle: kBodyStyleZone,
-                              labelStyle: kBodyStyleZone,
-                              icon:
-                                  Icon(Icons.person, color: kBlackS, size: 25),
-                            ),
-                            style: kBodyStyleZoneX,
-                            keyboardType: TextInputType.name,
-                            textInputAction: TextInputAction.next,
-                            validator: (val) => val!.isEmpty
-                                ? "Veuillez renseigner votre pseudo "
-                                : null,
-                            onChanged: (val) => user,
-                            controller: userNameController,
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      crossAxisAlignment: CrossAxisAlignment.center,
+                      children: <Widget>[
+                        Container(
+                          height: size.height * 0.32,
+                          child: Column(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: [
+                              TextInputField(
+                                icon: Icons.person,
+                                hint: 'username',
+                                inputAction: TextInputAction.done,
+                                inputType: TextInputType.text,
+                                controller: mdpController,
+                              ),
+                              TextInputField(
+                                icon: Icons.email,
+                                hint: 'Email',
+                                inputAction: TextInputAction.done,
+                                inputType: TextInputType.text,
+                                controller: mdpController,
+                              ),
+                              TextInputField(
+                                icon: Icons.lock,
+                                hint: 'Mot de passe',
+                                inputAction: TextInputAction.done,
+                                inputType: TextInputType.text,
+                                controller: mdpController,
+                              ),
+                              TextInputField(
+                                icon: Icons.lock,
+                                hint: 'Confirmez le Mot de passe',
+                                inputAction: TextInputAction.done,
+                                inputType: TextInputType.text,
+                                controller: mdpController,
+                              ),
+                            ],
                           ),
                         ),
-
-                        Padding(
-                          padding: const EdgeInsets.only(
-                              left: 5.0, right: 30.0, bottom: 10.0),
-                          child: TextFormField(
-                            validator: (val) => val!.isEmpty
-                                ? "Veuillez completer ce champs "
-                                : null,
-                            onChanged: (val) => email,
-                            controller: emailController,
-                            decoration: const InputDecoration(
-                              labelText: 'Email',
-                              hintText: 'Entrez votre adresse email',
-                              hintStyle: kBodyStyleZone,
-                              labelStyle: kBodyStyleZone,
-                              // border: UnderlineInputBorder(
-                              //     borderRadius: BorderRadius.circular(20)),
-                              icon: Icon(Icons.email, color: kBlackS, size: 25),
-                            ),
-                            obscureText: true,
-                            style: kBodyStyleZoneX,
-                            keyboardType: TextInputType.emailAddress,
-                            textInputAction: TextInputAction.next,
-                          ),
-                        ),
-
-                        Padding(
-                          padding: const EdgeInsets.only(
-                              left: 5.0, right: 30.0, bottom: 15.0),
-                          child: TextFormField(
-                            controller: mdpController,
-                            decoration: const InputDecoration(
-                              labelText: 'Mot de passe',
-                              hintText: 'Entrez votre mot de passe',
-                              hintStyle: kBodyStyleZone,
-                              labelStyle: kBodyStyleZone,
-                              // border: InputBorder.none,
-                              icon: Icon(Icons.lock, color: kBlackS, size: 25),
-                            ),
-                            validator: (val) => val!.length < 6
-                                ? "Veuillez renseigner votre mot de passe "
-                                : null,
-                            onChanged: (val) => mdp,
-                            obscureText: true,
-                            style: kBodyStyleZoneX,
-                            keyboardType: TextInputType.text,
-                            textInputAction: TextInputAction.done,
-                          ),
-                        ),
-                        // SizedBox(
-                        //   height: size.height * 0.03,
+// Padding(
+//                           padding: const EdgeInsets.symmetric(horizontal: 25.0),
+//                           child:
+                        // TextFormField(
+                        //     decoration: InputDecoration(
+                        //         enabledBorder: OutlineInputBorder(
+                        //           borderSide: const BorderSide(color: kWhite),
+                        //           borderRadius: BorderRadius.circular(12),
+                        //         ),
+                        //         focusedBorder: OutlineInputBorder(
+                        //           borderSide:
+                        //               const BorderSide(color: kJauneclair),
+                        //           borderRadius: BorderRadius.circular(12),
+                        //         ),
+                        //         fillColor: Colors.grey[200],
+                        //         filled: true,
+                        //         labelText: 'username',
+                        //         hintText: 'Entrez votre username',
+                        //         hintStyle: kBodyStyleZone,
+                        //         labelStyle: kBodyStyleZone,
+                        //         prefixIcon: const Padding(
+                        //             padding:
+                        //                 EdgeInsets.symmetric(vertical: 10.0),
+                        //             child: Icon(Icons.person,
+                        //                 color: kBlackS, size: 25))),
+                        //     style: kBodyStyleZoneX,
+                        //     keyboardType: TextInputType.name,
+                        //     textInputAction: TextInputAction.next,
+                        //     validator: (val) => val!.isEmpty
+                        //         ? "Veuillez renseigner votre username "
+                        //         : null,
+                        //     onChanged: (val) => user,
+                        //     controller: userNameController,
+                        //   ),
                         // ),
-                        Padding(
-                          padding: const EdgeInsets.only(
-                              left: 5.0, right: 30.0, bottom: 25.0),
-                          child: TextFormField(
-                            onChanged: (val) => confirmPass = val,
-                            // controller: confirmdpController,
-                            decoration: const InputDecoration(
-                              labelText: 'Confirmer votre Mot de passe',
-                              hintText: 'Retapez votre mot de passe',
-                              hintStyle: kBodyStyleZone,
-                              labelStyle: kBodyStyleZone,
-                              // border: InputBorder.none,
-                              icon: Icon(Icons.lock, color: kBlackS, size: 25),
-                            ),
-                            validator: (val) {
-                              if (val!.isEmpty) {
-                                return "Veuillez confirmer votre mot de passe ";
-                              } else if (confirmPass != mdp) {
-                                return "Les mots de passe de correspondent pas ";
-                              } else {
-                                return null;
-                              }
-                            },
 
-                            obscureText: true,
-                            style: kBodyStyleZoneX,
-                            keyboardType: TextInputType.text,
-                            textInputAction: TextInputAction.done,
+                        // Padding(
+                        //   padding: const EdgeInsets.symmetric(horizontal: 25.0),
+                        //   child: TextFormField(
+                        //     validator: (val) => val!.isEmpty
+                        //         ? "Veuillez completer ce champs "
+                        //         : null,
+                        //     onChanged: (val) => email,
+                        //     controller: emailController,
+                        //     decoration: const InputDecoration(
+                        //       labelText: 'Email',
+                        //       hintText: 'Entrez votre adresse email',
+                        //       hintStyle: kBodyStyleZone,
+                        //       labelStyle: kBodyStyleZone,
+                        //       // border: UnderlineInputBorder(
+                        //       //     borderRadius: BorderRadius.circular(20)),
+                        //       icon: Icon(Icons.email, color: kBlackS, size: 25),
+                        //     ),
+                        //     obscureText: true,
+                        //     style: kBodyStyleZoneX,
+                        //     keyboardType: TextInputType.emailAddress,
+                        //     textInputAction: TextInputAction.next,
+                        //   ),
+                        // ),
+
+                        // Padding(
+                        //   padding: const EdgeInsets.only(
+                        //       left: 5.0, right: 30.0, bottom: 15.0),
+                        //   child: TextFormField(
+                        //     controller: mdpController,
+                        //     decoration: const InputDecoration(
+                        //       labelText: 'Mot de passe',
+                        //       hintText: 'Entrez votre mot de passe',
+                        //       hintStyle: kBodyStyleZone,
+                        //       labelStyle: kBodyStyleZone,
+                        //       // border: InputBorder.none,
+                        //       icon: Icon(Icons.lock, color: kBlackS, size: 25),
+                        //     ),
+                        //     validator: (val) => val!.length < 6
+                        //         ? "Veuillez renseigner votre mot de passe "
+                        //         : null,
+                        //     onChanged: (val) => mdp,
+                        //     obscureText: true,
+                        //     style: kBodyStyleZoneX,
+                        //     keyboardType: TextInputType.text,
+                        //     textInputAction: TextInputAction.done,
+                        //   ),
+                        // ),
+                        // // SizedBox(
+                        // //   height: size.height * 0.03,
+                        // // ),
+                        // Padding(
+                        //   padding: const EdgeInsets.only(
+                        //       left: 5.0, right: 30.0, bottom: 25.0),
+                        //   child: TextFormField(
+                        //     onChanged: (val) => confirmPass = val,
+                        //     // controller: confirmdpController,
+                        //     decoration: const InputDecoration(
+                        //       labelText: 'Confirmer votre Mot de passe',
+                        //       hintText: 'Retapez votre mot de passe',
+                        //       hintStyle: kBodyStyleZone,
+                        //       labelStyle: kBodyStyleZone,
+                        //       // border: InputBorder.none,
+                        //       icon: Icon(Icons.lock, color: kBlackS, size: 25),
+                        //     ),
+                        //     validator: (val) {
+                        //       if (val!.isEmpty) {
+                        //         return "Veuillez confirmer votre mot de passe ";
+                        //       } else if (confirmPass != mdp) {
+                        //         return "Les mots de passe de correspondent pas ";
+                        //       } else {
+                        //         return null;
+                        //       }
+                        //     },
+
+                        //     obscureText: true,
+                        //     style: kBodyStyleZoneX,
+                        //     keyboardType: TextInputType.text,
+                        //     textInputAction: TextInputAction.done,
+                        //   ),
+                        // ),
+                        const SizedBox(
+                          height: 40,
+                        ),
+                        Bouton(
+                          buttonName: "S'inscrire",
+                          couleurs: kJaunesombre,
+                          kcouleurs: kBodyStyleBouton1,
+                          onPressed: validatationForm,
+                        ),
+                        const SizedBox(
+                          height: 10,
+                        ),
+                        Container(
+                          width: size.width * 0.8,
+                          // padding: const EdgeInsets.all(50),
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              const Text(
+                                'Vous avez déjà un compte? ',
+                                style: TextStyle(
+                                  fontSize: 15,
+                                  color: kWhite,
+                                  fontFamily: "Poppins-SemiBold",
+                                  fontWeight: FontWeight.w200,
+                                ),
+                              ),
+                              MaterialButton(
+                                onPressed: () {
+                                  Navigator.pushNamed(
+                                      context, "Connectez-vous");
+                                },
+                                child: const Text(
+                                  'Connectez-vous',
+                                  style: kBodyStyleBouton2,
+                                ),
+                              ),
+                            ],
                           ),
                         ),
+                        const SizedBox(height: 70),
                       ],
                     ),
                   ),
-                  const SizedBox(
-                    height: 20,
-                  ),
-                  Column(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Bouton(
-                        buttonName: "S'inscrire",
-                        couleurs: kJaunesombre,
-                        kcouleurs: kBodyStyleBouton1,
-                        onPressed: validatationForm,
-                      ),
-                      const SizedBox(
-                        height: 10,
-                      ),
-                      Padding(
-                        padding: const EdgeInsets.only(left: 50.0),
-                        child: Row(
-                          // mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          children: [
-                            const Text('Vous avez déjà un compte? ',
-                                style: kStylepetittexte2),
-                            MaterialButton(
-                              onPressed: () {
-                                Navigator.pushNamed(context, "Connectez-vous");
-                              },
-                              child: const Text(
-                                'Connectez-vous',
-                                style: kBodyStyleBouton2,
-                              ),
-                            ),
-                          ],
-                        ),
-                      ),
-                    ],
-                  ),
-                  const SizedBox(height: 70),
                 ],
               ),
             ),
-          ],
+          ),
         ),
       ),
     );

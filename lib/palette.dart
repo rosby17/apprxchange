@@ -41,7 +41,7 @@ const TextStyle kBodyStyleZone2 = TextStyle(
 );
 
 const TextStyle kBodyStyleBouton1 = TextStyle(
-  fontSize: 17,
+  fontSize: 20,
   color: kBlack,
   fontFamily: "Poppins-SemiBold",
   fontWeight: FontWeight.w600,
@@ -53,7 +53,7 @@ const TextStyle kBodyStyleBouton4 = TextStyle(
   fontWeight: FontWeight.w700,
 );
 const TextStyle kBodyStyleBouton2 = TextStyle(
-  fontSize: 17,
+  fontSize: 15,
   color: kWhite,
   fontFamily: "Poppins-SemiBold",
   fontWeight: FontWeight.w600,
@@ -73,13 +73,13 @@ const TextStyle kBodyStyle = TextStyle(
 );
 
 const TextStyle kStylepetittexte = TextStyle(
-  fontSize: 9,
+  fontSize: 12,
   color: kWhite,
   fontFamily: "Poppins-Medium",
   fontWeight: FontWeight.w500,
 );
 const TextStyle kStylepetittexte2 = TextStyle(
-  fontSize: 11,
+  fontSize: 12,
   color: kWhite,
   fontFamily: "Poppins-Medium",
   fontWeight: FontWeight.w500,

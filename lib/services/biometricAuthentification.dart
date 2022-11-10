@@ -144,15 +144,13 @@ class _LoginprintAppState extends State<LoginprintApp> {
         child: ListView(
           padding: const EdgeInsets.only(top: 30),
           children: <Widget>[
-            Container(
-              height: 250.0,
-              width: 80.0,
-              decoration: const BoxDecoration(
-                image: DecorationImage(
-                  image: AssetImage(
-                    'assets/images/rxchange_2blanc.png',
-                  ),
-                ),
+            SizedBox(height: 70),
+            Padding(
+              padding: const EdgeInsets.all(30.0),
+              child: Image.asset(
+                'assets/images/rxchange_2blanc.png',
+                width: 100,
+                height: 100,
               ),
             ),
             SizedBox(
@@ -213,22 +211,29 @@ class _LoginprintAppState extends State<LoginprintApp> {
                     kcouleurs: kBodyStyleBouton1,
                     onPressed: _authenticate,
                   ),
-                  Row(
-                    // mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      const Text('Se connecter avec un mot de passe ',
-                          style: kBodyStyleBouton2),
-                      MaterialButton(
-                        onPressed: () {
-                          Navigator.pushNamed(context, "Connectez-vous");
-                        },
-                        child: const Text(
-                          'Sign Up',
-                          style: kBodyStyleBouton2,
-                        ),
-                      ),
-                    ],
-                  ),
+                  // Row(
+                  //   mainAxisAlignment: MainAxisAlignment.center,
+                  //   children: [
+                  //     const Text(
+                  //       'Se connecter avec un mot de passe: ',
+                  //       style: TextStyle(
+                  //         fontSize: 15,
+                  //         color: kWhite,
+                  //         fontFamily: "Poppins-SemiBold",
+                  //         fontWeight: FontWeight.w200,
+                  //       ),
+                  //     ),
+                  //     MaterialButton(
+                  //       onPressed: () {
+                  //         Navigator.pushNamed(context, "Connectez-vous");
+                  //       },
+                  //       child: const Text(
+                  //         'Sign Up',
+                  //         style: kBodyStyleBouton2,
+                  //       ),
+                  //     ),
+                  //   ],
+                  // ),
                 ],
               ),
             ),

@@ -22,7 +22,7 @@ class Bouton extends StatelessWidget {
 
     return Container(
       height: size.height * 0.07,
-      width: size.width * 0.8,
+      width: size.width * 0.9,
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(20),
         color: couleurs,
@@ -60,7 +60,7 @@ class BoutonLong extends StatelessWidget {
       height: size.height * 0.075,
       width: size.width * 0.9,
       decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(13),
+        borderRadius: BorderRadius.circular(12),
         color: couleurs,
       ),
       child: Padding(
