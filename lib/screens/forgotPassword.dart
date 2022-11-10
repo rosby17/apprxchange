@@ -38,13 +38,13 @@ class ForgotPassword extends StatelessWidget {
             ),
             centerTitle: true,
           ),
-          body: Container(
+          body: SizedBox(
             height: size.height * 0.7,
             child: Center(
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  Container(
+                  SizedBox(
                     width: size.width * 0.8,
                     child: const Text(
                       'Nous allons vous envoyer un email de récupération de compte, veuillez entrer votre adresse électronique ',

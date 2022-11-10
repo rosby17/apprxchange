@@ -39,7 +39,7 @@ class Bouton extends StatelessWidget {
 }
 
 class BoutonLong extends StatelessWidget {
-  BoutonLong({
+  const BoutonLong({
     Key? key,
     @required this.onPressed,
     required this.buttonName,

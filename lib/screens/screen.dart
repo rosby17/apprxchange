@@ -7,6 +7,5 @@ export 'actualites.dart';
 export 'portefeuille.dart';
 export 'theAction.dart';
 export 'market.dart';
-export 'achat.dart';
 export 'home.dart';
 export '../services/biometricAuthentification.dart';

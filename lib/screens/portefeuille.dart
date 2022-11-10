@@ -1,4 +1,3 @@
-import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:rx_change_3/models/blockchain_utils/ethereum_utils.dart';
 import 'package:rx_change_3/palette.dart';
@@ -111,8 +110,10 @@ class _PortefeuilleState extends State<Portefeuille> {
               onTap: () async {
                 await ethUtils.sendBalance(_value!.toInt());
                 if (_value == 0) {
+                  // ignore: use_build_context_synchronously
                   incorrectValueDialogBox(context);
                 } else {
+                  // ignore: use_build_context_synchronously
                   sendDialogBox(context);
                 }
               }),
@@ -128,6 +129,7 @@ class _PortefeuilleState extends State<Portefeuille> {
                   // ignore: use_build_context_synchronously
                   incorrectValueDialogBox(context);
                 } else {
+                  // ignore: use_build_context_synchronously
                   withDrawDialogBox(context);
                 }
               })

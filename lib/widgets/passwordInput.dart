@@ -1,3 +1,5 @@
+// ignore_for_file: file_names
+
 import 'package:flutter/material.dart';
 import 'package:rx_change_3/palette.dart';
 
@@ -47,7 +49,7 @@ class PassWordInput extends StatelessWidget {
               hintStyle: kBodyStyleZone,
             ),
             validator: (val) =>
-                val!.length == 0 ? "Veuillez completer ce champs " : null,
+                val!.isEmpty ? "Veuillez completer ce champs " : null,
             onSaved: (val) => password,
             obscureText: true,
             style: kBodyStyleZoneX,

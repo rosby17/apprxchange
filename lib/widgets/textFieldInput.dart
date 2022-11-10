@@ -1,5 +1,6 @@
-import 'package:flutter/material.dart';
+// ignore_for_file: file_names
 import 'package:rx_change_3/palette.dart';
+import 'package:flutter/material.dart';
 
 class TextInputField extends StatelessWidget {
   const TextInputField({
@@ -46,7 +47,7 @@ class TextInputField extends StatelessWidget {
               hintStyle: kBodyStyleZone,
             ),
             validator: (val) =>
-                val!.length == 0 ? "Veuillez remplir  ce champs" : null,
+                val!.isEmpty ? "Veuillez remplir  ce champs" : null,
             onSaved: (val) => nom,
             style: kBodyStyleZoneX,
             keyboardType: inputType,

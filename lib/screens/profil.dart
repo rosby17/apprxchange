@@ -63,9 +63,9 @@ class MenuSection extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: EdgeInsets.only(top: 20),
+      margin: const EdgeInsets.only(top: 20),
       height: 100,
-      decoration: BoxDecoration(
+      decoration: const BoxDecoration(
         color: kWhite,
         borderRadius: BorderRadius.only(
             topLeft: Radius.circular(70), topRight: Radius.circular(70)),
@@ -75,12 +75,12 @@ class MenuSection extends StatelessWidget {
           return Row(
             children: [
               Container(
-                margin: EdgeInsets.only(left: 25, top: 15),
+                margin: const EdgeInsets.only(left: 25, top: 15),
                 child: Container(
-                  padding: EdgeInsets.all(5),
+                  padding: const EdgeInsets.all(5),
                   height: 100,
                   width: 100,
-                  decoration: BoxDecoration(
+                  decoration: const BoxDecoration(
                     color: kVertclair,
                     shape: BoxShape.circle,
                   ),
@@ -98,7 +98,7 @@ class MenuSection extends StatelessWidget {
                   children: [
                     Text(
                       infoClient['prenom'] + ' ' + infoClient['nom'],
-                      style: TextStyle(
+                      style: const TextStyle(
                         fontSize: 24,
                         color: Colors.black87,
                         fontFamily: "Poppins-SemiBold",
@@ -107,7 +107,7 @@ class MenuSection extends StatelessWidget {
                     ),
                     Text(
                       infoClient['typeDeCompte'],
-                      style: TextStyle(
+                      style: const TextStyle(
                         fontSize: 16,
                         color: kVertclair,
                         fontFamily: "Poppins-SemiBold",
@@ -164,12 +164,12 @@ class InfoGenerales extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: EdgeInsets.all(20),
+      margin: const EdgeInsets.all(20),
       child: Column(
         children: [
-          Row(children: [
+          Row(children: const [
             Padding(
-              padding: const EdgeInsets.only(right: 8.0),
+              padding: EdgeInsets.only(right: 8.0),
               child: Icon(
                 Icons.info,
                 color: kVertsombre,
@@ -181,7 +181,7 @@ class InfoGenerales extends StatelessWidget {
               style: kBodyStyleBouton4,
             ),
           ]),
-          SizedBox(
+          const SizedBox(
             height: 20,
           ),
           Column(
@@ -189,8 +189,8 @@ class InfoGenerales extends StatelessWidget {
               return Column(
                 children: [
                   Row(children: [
-                    Padding(
-                      padding: const EdgeInsets.only(right: 6.0),
+                    const Padding(
+                      padding: EdgeInsets.only(right: 6.0),
                       child: Icon(
                         Icons.email,
                         color: kJaunesombre,
@@ -202,7 +202,7 @@ class InfoGenerales extends StatelessWidget {
                         padding: const EdgeInsets.all(8.0),
                         child: Text(
                           infoClient['email'],
-                          style: TextStyle(
+                          style: const TextStyle(
                             fontSize: 17,
                             color: Colors.black54,
                             fontFamily: "Poppins-SemiBold",
@@ -211,7 +211,7 @@ class InfoGenerales extends StatelessWidget {
                         ),
                       ),
                     ),
-                    IconButton(
+                    const IconButton(
                       onPressed: null,
                       icon: Icon(
                         Icons.arrow_back_ios_outlined,
@@ -221,8 +221,8 @@ class InfoGenerales extends StatelessWidget {
                     )
                   ]),
                   Row(children: [
-                    Padding(
-                      padding: const EdgeInsets.only(right: 6.0),
+                    const Padding(
+                      padding: EdgeInsets.only(right: 6.0),
                       child: Icon(
                         Icons.file_present,
                         color: kJaunesombre,
@@ -234,7 +234,7 @@ class InfoGenerales extends StatelessWidget {
                         padding: const EdgeInsets.all(8.0),
                         child: Text(
                           infoClient['document'],
-                          style: TextStyle(
+                          style: const TextStyle(
                             fontSize: 17,
                             color: Colors.black54,
                             fontFamily: "Poppins-SemiBold",
@@ -243,7 +243,7 @@ class InfoGenerales extends StatelessWidget {
                         ),
                       ),
                     ),
-                    IconButton(
+                    const IconButton(
                       onPressed: null,
                       icon: Icon(
                         Icons.arrow_back_ios_outlined,
@@ -252,9 +252,9 @@ class InfoGenerales extends StatelessWidget {
                       ),
                     )
                   ]),
-                  Row(children: [
+                  Row(children: const [
                     Padding(
-                      padding: const EdgeInsets.only(right: 6.0),
+                      padding: EdgeInsets.only(right: 6.0),
                       child: Icon(
                         Icons.email,
                         color: kJaunesombre,
@@ -263,7 +263,7 @@ class InfoGenerales extends StatelessWidget {
                     ),
                     Expanded(
                       child: Padding(
-                        padding: const EdgeInsets.all(8.0),
+                        padding: EdgeInsets.all(8.0),
                         child: Text(
                           'Modifier ses informations de CNI',
                           style: TextStyle(
@@ -302,7 +302,7 @@ class VerificationIdentite extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        Text(
+        const Text(
           'VERIFICATION D \'IDENTITE',
           style: kBodyStyleBouton4,
         ),
@@ -312,7 +312,7 @@ class VerificationIdentite extends StatelessWidget {
           kcouleurs: kBodyStyleBouton2,
           onPressed: null,
         ),
-        SizedBox(
+        const SizedBox(
           height: 30,
         ),
         BoutonLong(
@@ -321,17 +321,17 @@ class VerificationIdentite extends StatelessWidget {
           kcouleurs: kBodyStyleBouton2,
           onPressed: null,
         ),
-        SizedBox(
+        const SizedBox(
           height: 40,
         ),
-        Text(
+        const Text(
           'VERIFICATION ADRESSE',
           style: kBodyStyleBouton4,
         ),
         BoutonLong(
           buttonName: 'Vérification adresse',
           couleurs: kJauneclair,
-          kcouleurs: TextStyle(
+          kcouleurs: const TextStyle(
             fontSize: 17,
             color: Colors.black54,
             fontFamily: "Poppins-SemiBold",

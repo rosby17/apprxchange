@@ -17,7 +17,7 @@ class _AccueilState extends State<Accueil> {
     // const TheAction(),
     const Market(),
     const Actualites(),
-    Portefeuille(),
+    const Portefeuille(),
   ];
 
   @override
