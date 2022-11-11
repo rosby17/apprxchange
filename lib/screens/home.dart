@@ -24,7 +24,7 @@ class Home extends StatelessWidget {
             child: IconButton(
               onPressed: () {
                 var route = MaterialPageRoute(builder: (BuildContext context) {
-                  return const profil();
+                  return const Profil();
                 });
                 Navigator.of(context).push(route);
               },

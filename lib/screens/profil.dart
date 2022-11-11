@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:rx_change_3/palette.dart';
 import 'package:rx_change_3/widgets/widgets.dart';
 
-class profil extends StatelessWidget {
-  const profil({Key? key}) : super(key: key);
+class Profil extends StatelessWidget {
+  const Profil({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -301,8 +301,8 @@ class VerificationIdentite extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
-      children: [
-        const Text(
+      children: const [
+        Text(
           'VERIFICATION D \'IDENTITE',
           style: kBodyStyleBouton4,
         ),
@@ -312,7 +312,7 @@ class VerificationIdentite extends StatelessWidget {
           kcouleurs: kBodyStyleBouton2,
           onPressed: null,
         ),
-        const SizedBox(
+        SizedBox(
           height: 30,
         ),
         BoutonLong(
@@ -321,17 +321,17 @@ class VerificationIdentite extends StatelessWidget {
           kcouleurs: kBodyStyleBouton2,
           onPressed: null,
         ),
-        const SizedBox(
+        SizedBox(
           height: 40,
         ),
-        const Text(
+        Text(
           'VERIFICATION ADRESSE',
           style: kBodyStyleBouton4,
         ),
         BoutonLong(
           buttonName: 'Vérification adresse',
           couleurs: kJauneclair,
-          kcouleurs: const TextStyle(
+          kcouleurs: TextStyle(
             fontSize: 17,
             color: Colors.black54,
             fontFamily: "Poppins-SemiBold",

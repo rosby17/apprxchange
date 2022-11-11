@@ -144,7 +144,7 @@ class _LoginprintAppState extends State<LoginprintApp> {
         child: ListView(
           padding: const EdgeInsets.only(top: 30),
           children: <Widget>[
-            SizedBox(height: 70),
+            const SizedBox(height: 70),
             Padding(
               padding: const EdgeInsets.all(30.0),
               child: Image.asset(

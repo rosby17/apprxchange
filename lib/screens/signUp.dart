@@ -1,4 +1,5 @@
-// ignore_for_file: deprecated_member_use
+// ignore: duplicate_ignore
+// ignore_for_file: file_names
 
 import 'package:flutter/material.dart';
 // import 'package:rxchange/services/serviceApi.dart';
@@ -74,7 +75,7 @@ class _SignUpState extends State<SignUp> {
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       crossAxisAlignment: CrossAxisAlignment.center,
                       children: <Widget>[
-                        Container(
+                        SizedBox(
                           height: size.height * 0.32,
                           child: Column(
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -238,7 +239,7 @@ class _SignUpState extends State<SignUp> {
                         const SizedBox(
                           height: 10,
                         ),
-                        Container(
+                        SizedBox(
                           width: size.width * 0.8,
                           // padding: const EdgeInsets.all(50),
                           child: Row(
