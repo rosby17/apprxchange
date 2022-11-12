@@ -209,7 +209,7 @@ class _LoginprintAppState extends State<LoginprintApp> {
                     buttonName: ' S\'authentifier',
                     couleurs: kJaunesombre,
                     kcouleurs: kBodyStyleBouton1,
-                    onPressed: _authenticate,
+                    onTap: _authenticate,
                   ),
                   // Row(
                   //   mainAxisAlignment: MainAxisAlignment.center,

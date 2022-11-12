@@ -8,4 +8,5 @@ export 'portefeuille.dart';
 export 'theAction.dart';
 export 'market.dart';
 export 'home.dart';
+export 'mainPage.dart';
 export '../services/biometricAuthentification.dart';

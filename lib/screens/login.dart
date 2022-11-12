@@ -1,19 +1,37 @@
 // ignore_for_file: unused_local_variable
 
 import 'package:flutter/material.dart';
-// import 'package:flutter_signin_button/flutter_signin_button.dart';
-// import 'package:rxchange/screens/screen.dart';
 import 'package:rx_change_3/widgets/widgets.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import '../palette.dart';
 
-class Login extends StatelessWidget {
-  const Login({Key? key}) : super(key: key);
+class Login extends StatefulWidget {
+  const Login({super.key});
+
+  @override
+  State<Login> createState() => _LoginState();
+}
+
+class _LoginState extends State<Login> {
+  final emailController = TextEditingController();
+  final mdpController = TextEditingController();
+
+  Future signIn() async {
+    await FirebaseAuth.instance.signInWithEmailAndPassword(
+      email: emailController.text.trim(),
+      password: mdpController.text.trim(),
+    );
+  }
+
+  @override
+  void dispose() {
+    emailController.dispose();
+    mdpController.dispose();
+    super.dispose();
+  }
 
   @override
   Widget build(BuildContext context) {
-    var emailController = TextEditingController();
-    var mdpController = TextEditingController();
-
     Size size = MediaQuery.of(context).size;
     return Scaffold(
       backgroundColor: kVertsombre,
@@ -81,9 +99,7 @@ class Login extends StatelessWidget {
                     buttonName: 'Se connecter',
                     couleurs: kJaunesombre,
                     kcouleurs: kBodyStyleBouton1,
-                    onPressed: () {
-                      Navigator.pushNamed(context, 'Se Connecter');
-                    },
+                    onTap: signIn,
                   ),
                   const SizedBox(
                     height: 15,
@@ -92,7 +108,7 @@ class Login extends StatelessWidget {
                     buttonName: 'Creer un nouveau compte',
                     couleurs: kVertclair,
                     kcouleurs: kBodyStyleBouton2,
-                    onPressed: () {
+                    onTap: () {
                       Navigator.pushNamed(context, 'Creer un compte');
                     },
                   ),

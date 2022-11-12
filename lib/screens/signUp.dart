@@ -234,7 +234,7 @@ class _SignUpState extends State<SignUp> {
                           buttonName: "S'inscrire",
                           couleurs: kJaunesombre,
                           kcouleurs: kBodyStyleBouton1,
-                          onPressed: validatationForm,
+                          onTap: validatationForm,
                         ),
                         const SizedBox(
                           height: 10,

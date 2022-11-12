@@ -1,3 +1,4 @@
+// import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:rx_change_3/palette.dart';
 import 'package:rx_change_3/screens/screen.dart';
@@ -14,7 +15,6 @@ class _AccueilState extends State<Accueil> {
   int _id = 0;
   static List<Widget> pageOptions = <Widget>[
     const Home(),
-    // const TheAction(),
     const Market(),
     const Actualites(),
     const Portefeuille(),
@@ -56,12 +56,15 @@ class _AccueilState extends State<Accueil> {
     );
   }
 
+  // final user = FirebaseAuth.instance.currentUser!;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: kWhite,
       body: Center(
         child: pageOptions.elementAt(_id),
+        // Text('signed in as ${user.email!}'),
       ),
       bottomNavigationBar: BottomNavigationBar(
           items: _item,

@@ -1,10 +1,15 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:rx_change_3/palette.dart';
-import 'package:rx_change_3/widgets/widgets.dart';
 
-class Profil extends StatelessWidget {
-  const Profil({Key? key}) : super(key: key);
+class Profil extends StatefulWidget {
+  const Profil({super.key});
 
+  @override
+  State<Profil> createState() => _ProfilState();
+}
+
+class _ProfilState extends State<Profil> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -22,7 +27,6 @@ class Profil extends StatelessWidget {
               child: MenuSection(),
             ),
             InfoGenerales(),
-            const VerificationIdentite(),
           ],
         ),
       ),
@@ -42,22 +46,6 @@ class MenuSection extends StatelessWidget {
       'typeDeCompte': 'Compte principal',
       'email': 'rooseveltmkr@gmail.com',
     },
-    // {
-    //   'photo': 'assets/photoClient/client2.jpg',
-    //   'nom': 'Mogo Kamdem',
-    //   'prenom': 'Roosevelt',
-    //   'pseudo': 'rosby17',
-    //   'typeDeCompte': 'Compte principal',
-    //   'email': 'rooseveltmkr@gmail.com',
-    // },
-    // {
-    //   'photo': 'assets/photoClient/client2.jpg',
-    //   'nom': 'Mogo Kamdem',
-    //   'prenom': 'Roosevelt',
-    //   'pseudo': 'rosby17',
-    //   'typeDeCompte': 'Compte principal',
-    //   'email': 'rooseveltmkr@gmail.com',
-    // },
   ];
 
   @override
@@ -141,28 +129,11 @@ class InfoGenerales extends StatelessWidget {
       'document': 'Documents',
       'CNI': ''
     },
-    // {
-    //   'photo': 'assets/photoClient/client2.jpg',
-    //   'nom': 'Mogo Kamdem',
-    //   'prenom': 'Roosevelt',
-    //   'pseudo': 'rosby17',
-    //   'typeDeCompte': 'Compte principal',
-    //   'email': 'rosbylerostiti@gmail.com',
-    // 'document': 'Documents',
-    // },
-    // {
-    //   'photo': 'assets/photoClient/client2.jpg',
-    //   'nom': 'Mogo Kamdem',
-    //   'prenom': 'Roosevelt',
-    //   'pseudo': 'rosby17',
-    //   'typeDeCompte': 'Compte principal',
-    //   'email': 'lephotoshopeurpro@gmail.com',
-    // 'document': 'Documents',
-    // },
   ];
 
   @override
   Widget build(BuildContext context) {
+    final user = FirebaseAuth.instance.currentUser!;
     return Container(
       margin: const EdgeInsets.all(20),
       child: Column(
@@ -201,7 +172,7 @@ class InfoGenerales extends StatelessWidget {
                       child: Padding(
                         padding: const EdgeInsets.all(8.0),
                         child: Text(
-                          infoClient['email'],
+                          user.email!,
                           style: const TextStyle(
                             fontSize: 17,
                             color: Colors.black54,
@@ -288,58 +259,15 @@ class InfoGenerales extends StatelessWidget {
               );
             }).toList(),
           ),
+          MaterialButton(
+            onPressed: () {
+              FirebaseAuth.instance.signOut();
+            },
+            color: kJauneclair,
+            child: const Text('Se deconnecter'),
+          ),
         ],
       ),
-    );
-  }
-}
-
-class VerificationIdentite extends StatelessWidget {
-  const VerificationIdentite({Key? key}) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: const [
-        Text(
-          'VERIFICATION D \'IDENTITE',
-          style: kBodyStyleBouton4,
-        ),
-        BoutonLong(
-          buttonName: 'Identité validée',
-          couleurs: kVertclair,
-          kcouleurs: kBodyStyleBouton2,
-          onPressed: null,
-        ),
-        SizedBox(
-          height: 30,
-        ),
-        BoutonLong(
-          buttonName: 'Selfie Validé',
-          couleurs: kVertclair,
-          kcouleurs: kBodyStyleBouton2,
-          onPressed: null,
-        ),
-        SizedBox(
-          height: 40,
-        ),
-        Text(
-          'VERIFICATION ADRESSE',
-          style: kBodyStyleBouton4,
-        ),
-        BoutonLong(
-          buttonName: 'Vérification adresse',
-          couleurs: kJauneclair,
-          kcouleurs: TextStyle(
-            fontSize: 17,
-            color: Colors.black54,
-            fontFamily: "Poppins-SemiBold",
-            fontWeight: FontWeight.w700,
-          ),
-          onPressed: null,
-        ),
-      ],
     );
   }
 }
