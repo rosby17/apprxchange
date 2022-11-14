@@ -1,11 +1,11 @@
 
 
-
+<img src="https://github.com/rosby17/apprxchange/blob/master/assets/images/rxchange_2noir.png" style=" width:200px ; height:180px"  >
 
 # rx_change_3!
 
-<img src="https://github.com/rosby17/apprxchange/blob/master/z_SignUp.png" style=" width:120px ; height:240px "  > <img src="https://github.com/rosby17/apprxchange/blob/master/z_siign.jpg" style="  width:120px ; height:240px "  >
-<img src="https://github.com/rosby17/apprxchange/blob/master/assets/images/rxchange_2noir.png" style=" width:240px ; height:180px"  >
+<img src="https://github.com/rosby17/apprxchange/blob/master/z_SignUp.png" style=" width:240px ; height:500px "  > <img src="https://github.com/rosby17/apprxchange/blob/master/z_siign.jpg" style="  width:240px ; height:500px "  >
+
  ![alt text]() ![alt text](?raw=true)
 
 
