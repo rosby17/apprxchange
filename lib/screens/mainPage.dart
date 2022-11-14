@@ -18,7 +18,7 @@ class MainPage extends StatelessWidget {
               if (snapshot.hasData) {
                 return const LoginprintApp();
               } else {
-                return const Login();
+                return const AuthPage();
               }
             })));
   }

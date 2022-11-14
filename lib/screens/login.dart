@@ -6,7 +6,8 @@ import 'package:firebase_auth/firebase_auth.dart';
 import '../palette.dart';
 
 class Login extends StatefulWidget {
-  const Login({super.key});
+  final VoidCallback showRegisterPage;
+  const Login({super.key, required this.showRegisterPage});
 
   @override
   State<Login> createState() => _LoginState();
@@ -66,7 +67,7 @@ class _LoginState extends State<Login> {
                   ),
                   const SizedBox(height: 50),
                   TextInputField(
-                     obscureText: false,
+                    obscureText: false,
                     controller: emailController,
                     icon: Icons.mail,
                     hint: 'Email',
@@ -75,7 +76,7 @@ class _LoginState extends State<Login> {
                   ),
                   const SizedBox(height: 20),
                   TextInputField(
-                     obscureText: false,
+                    obscureText: true,
                     icon: Icons.lock,
                     hint: 'Mot de passe',
                     inputAction: TextInputAction.done,
@@ -110,9 +111,7 @@ class _LoginState extends State<Login> {
                     buttonName: 'Creer un nouveau compte',
                     couleurs: kVertclair,
                     kcouleurs: kBodyStyleBouton2,
-                    onTap: () {
-                      Navigator.pushNamed(context, 'Creer un compte');
-                    },
+                    onTap: widget.showRegisterPage,
                   ),
                   const SizedBox(
                     height: 15,

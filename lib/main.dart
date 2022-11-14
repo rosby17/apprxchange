@@ -19,9 +19,7 @@ Future main() async {
       initialRoute: '/',
       routes: {
         '/': (context) => const MainPage(),
-        'Connectez-vous': (context) => const Login(),
         'Mot de passe oublié': (context) => const ForgotPassword(),
-        'Creer un compte': (context) => const SignUp(),
         'Authentifier': (context) => const Accueil(),
         'mail de validation': (context) => const ForgotPassword(),
       },

@@ -9,4 +9,5 @@ export 'theAction.dart';
 export 'market.dart';
 export 'home.dart';
 export 'mainPage.dart';
+export 'authPage.dart';
 export '../services/biometricAuthentification.dart';

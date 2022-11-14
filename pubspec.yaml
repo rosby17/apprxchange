@@ -51,6 +51,9 @@ dependencies:
   firebase_core: ^2.2.0
   # firebase_analytics: ^6.3.0
   cloud_firestore: ^4.0.5
+  flutter_screenutil: ^5.6.0
+  line_awesome_flutter: ^2.0.0
+  animated_theme_switcher: ^2.0.7
   # flutter_signin_button: ^2.0.0
   # firebase_dynamic_links: ^5.0.4
   # sqflite: any
@@ -91,10 +94,7 @@ flutter:
   # To add assets to your application, add an assets section, like this:
   assets:
     - assets/images/
-    - assets/images/photos/
-    - assets/photoClient/
-    - src/artifacts/Crypto.json
-    - src/artifacts/Investment.json
+    - src/artifacts/
     - .env
 
   # An image asset can refer to one or more resolution-specific "variants", see
@@ -121,6 +121,16 @@ flutter:
       fonts:
         - asset: assets/fonts/Poppins-Regular.ttf
 
- 
+    - family: SFProText
+      fonts:
+        - asset: assets/fonts/SF-Pro-Text-Thin.otf
+          weight: 100
+        - asset: assets/fonts/SF-Pro-Text-Regular.otf
+          weight: 400
+        - asset: assets/fonts/SF-Pro-Text-Medium.otf
+          weight: 500
+        - asset: assets/fonts/SF-Pro-Text-Bold.otf
+          weight: 700
+          
   # For details regarding fonts from package dependencies,
   # see https://flutter.dev/custom-fonts/#from-packages
