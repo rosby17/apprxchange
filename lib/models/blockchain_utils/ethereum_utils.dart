@@ -4,7 +4,7 @@ import 'package:flutter/services.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:web3dart/web3dart.dart';
 import 'package:http/http.dart' as http;
-import 'package:web_socket_channel/io.dart';
+// import 'package:web_socket_channel/io.dart';
 
 class EthereumUtils {
   late Web3Client web3client;
@@ -13,9 +13,10 @@ class EthereumUtils {
 
   void initial() {
     httpClient = http.Client();
-    String ganachehttpApi = "https://127.0.0.1:7545";
-    String ganachewsApi = "ws://127.0.0.1:7545";
-    web3client = Web3Client(ganachehttpApi, httpClient);
+    String infuraApi =
+        "https://goerli.infura.io/v3/32cf5208a6ac471686e5b08c91ac01ad";
+    // String ganachewsApi = "ws://192.168.43.159:7545";
+    web3client = Web3Client(infuraApi, httpClient);
   }
 
   Future getBalance() async {

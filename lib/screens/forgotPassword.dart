@@ -1,3 +1,5 @@
+// ignore_for_file: file_names
+
 import 'package:flutter/material.dart';
 import 'package:rx_change_3/palette.dart';
 import '../widgets/widgets.dart';
@@ -38,13 +40,13 @@ class ForgotPassword extends StatelessWidget {
             ),
             centerTitle: true,
           ),
-          body: Container(
+          body: SizedBox(
             height: size.height * 0.7,
             child: Center(
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  Container(
+                  SizedBox(
                     width: size.width * 0.8,
                     child: const Text(
                       'Nous allons vous envoyer un email de récupération de compte, veuillez entrer votre adresse électronique ',
@@ -55,6 +57,7 @@ class ForgotPassword extends StatelessWidget {
                     height: 20,
                   ),
                   TextInputField(
+                    obscureText: false,
                     controller: emailController,
                     icon: Icons.mail,
                     hint: 'Email',

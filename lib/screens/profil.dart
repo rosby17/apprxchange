@@ -1,10 +1,15 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:rx_change_3/palette.dart';
-import 'package:rx_change_3/widgets/widgets.dart';
 
-class profil extends StatelessWidget {
-  const profil({Key? key}) : super(key: key);
+class Profil extends StatefulWidget {
+  const Profil({super.key});
 
+  @override
+  State<Profil> createState() => _ProfilState();
+}
+
+class _ProfilState extends State<Profil> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -21,8 +26,7 @@ class profil extends StatelessWidget {
               color: kVertclair,
               child: MenuSection(),
             ),
-            InfoGenerales(),
-            const VerificationIdentite(),
+            const InfoGenerales(),
           ],
         ),
       ),
@@ -42,30 +46,14 @@ class MenuSection extends StatelessWidget {
       'typeDeCompte': 'Compte principal',
       'email': 'rooseveltmkr@gmail.com',
     },
-    // {
-    //   'photo': 'assets/photoClient/client2.jpg',
-    //   'nom': 'Mogo Kamdem',
-    //   'prenom': 'Roosevelt',
-    //   'pseudo': 'rosby17',
-    //   'typeDeCompte': 'Compte principal',
-    //   'email': 'rooseveltmkr@gmail.com',
-    // },
-    // {
-    //   'photo': 'assets/photoClient/client2.jpg',
-    //   'nom': 'Mogo Kamdem',
-    //   'prenom': 'Roosevelt',
-    //   'pseudo': 'rosby17',
-    //   'typeDeCompte': 'Compte principal',
-    //   'email': 'rooseveltmkr@gmail.com',
-    // },
   ];
 
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: EdgeInsets.only(top: 20),
+      margin: const EdgeInsets.only(top: 20),
       height: 100,
-      decoration: BoxDecoration(
+      decoration: const BoxDecoration(
         color: kWhite,
         borderRadius: BorderRadius.only(
             topLeft: Radius.circular(70), topRight: Radius.circular(70)),
@@ -75,12 +63,12 @@ class MenuSection extends StatelessWidget {
           return Row(
             children: [
               Container(
-                margin: EdgeInsets.only(left: 25, top: 15),
+                margin: const EdgeInsets.only(left: 25, top: 15),
                 child: Container(
-                  padding: EdgeInsets.all(5),
+                  padding: const EdgeInsets.all(5),
                   height: 100,
                   width: 100,
-                  decoration: BoxDecoration(
+                  decoration: const BoxDecoration(
                     color: kVertclair,
                     shape: BoxShape.circle,
                   ),
@@ -98,7 +86,7 @@ class MenuSection extends StatelessWidget {
                   children: [
                     Text(
                       infoClient['prenom'] + ' ' + infoClient['nom'],
-                      style: TextStyle(
+                      style: const TextStyle(
                         fontSize: 24,
                         color: Colors.black87,
                         fontFamily: "Poppins-SemiBold",
@@ -107,7 +95,7 @@ class MenuSection extends StatelessWidget {
                     ),
                     Text(
                       infoClient['typeDeCompte'],
-                      style: TextStyle(
+                      style: const TextStyle(
                         fontSize: 16,
                         color: kVertclair,
                         fontFamily: "Poppins-SemiBold",
@@ -125,51 +113,36 @@ class MenuSection extends StatelessWidget {
   }
 }
 
-class InfoGenerales extends StatelessWidget {
-  InfoGenerales({
-    Key? key,
-  }) : super(key: key);
-
-  final List infoClient = [
-    {
-      'photo': 'assets/photoClient/client1.jpg',
-      'nom': 'Mogo',
-      'prenom': 'Roosevelt',
-      'pseudo': 'rosby17',
-      'typeDeCompte': 'Compte principal',
-      'email': 'rooseveltmkr@gmail.com',
-      'document': 'Documents',
-      'CNI': ''
-    },
-    // {
-    //   'photo': 'assets/photoClient/client2.jpg',
-    //   'nom': 'Mogo Kamdem',
-    //   'prenom': 'Roosevelt',
-    //   'pseudo': 'rosby17',
-    //   'typeDeCompte': 'Compte principal',
-    //   'email': 'rosbylerostiti@gmail.com',
-    // 'document': 'Documents',
-    // },
-    // {
-    //   'photo': 'assets/photoClient/client2.jpg',
-    //   'nom': 'Mogo Kamdem',
-    //   'prenom': 'Roosevelt',
-    //   'pseudo': 'rosby17',
-    //   'typeDeCompte': 'Compte principal',
-    //   'email': 'lephotoshopeurpro@gmail.com',
-    // 'document': 'Documents',
-    // },
-  ];
+class InfoGenerales extends StatefulWidget {
+  const InfoGenerales({super.key});
 
   @override
+  State<InfoGenerales> createState() => _InfoGeneralesState();
+}
+
+class _InfoGeneralesState extends State<InfoGenerales> {
+  @override
   Widget build(BuildContext context) {
+    final List infoClient = [
+      {
+        'photo': 'assets/photoClient/client1.jpg',
+        'nom': 'Mogo',
+        'prenom': 'Roosevelt',
+        'pseudo': 'rosby17',
+        'typeDeCompte': 'Compte principal',
+        'email': 'rooseveltmkr@gmail.com',
+        'document': 'Documents',
+        'CNI': ''
+      },
+    ];
+    final user = FirebaseAuth.instance.currentUser!;
     return Container(
-      margin: EdgeInsets.all(20),
+      margin: const EdgeInsets.all(20),
       child: Column(
         children: [
-          Row(children: [
+          Row(children: const [
             Padding(
-              padding: const EdgeInsets.only(right: 8.0),
+              padding: EdgeInsets.only(right: 8.0),
               child: Icon(
                 Icons.info,
                 color: kVertsombre,
@@ -181,7 +154,7 @@ class InfoGenerales extends StatelessWidget {
               style: kBodyStyleBouton4,
             ),
           ]),
-          SizedBox(
+          const SizedBox(
             height: 20,
           ),
           Column(
@@ -189,8 +162,8 @@ class InfoGenerales extends StatelessWidget {
               return Column(
                 children: [
                   Row(children: [
-                    Padding(
-                      padding: const EdgeInsets.only(right: 6.0),
+                    const Padding(
+                      padding: EdgeInsets.only(right: 6.0),
                       child: Icon(
                         Icons.email,
                         color: kJaunesombre,
@@ -201,8 +174,8 @@ class InfoGenerales extends StatelessWidget {
                       child: Padding(
                         padding: const EdgeInsets.all(8.0),
                         child: Text(
-                          infoClient['email'],
-                          style: TextStyle(
+                          user.email!,
+                          style: const TextStyle(
                             fontSize: 17,
                             color: Colors.black54,
                             fontFamily: "Poppins-SemiBold",
@@ -211,7 +184,7 @@ class InfoGenerales extends StatelessWidget {
                         ),
                       ),
                     ),
-                    IconButton(
+                    const IconButton(
                       onPressed: null,
                       icon: Icon(
                         Icons.arrow_back_ios_outlined,
@@ -221,8 +194,8 @@ class InfoGenerales extends StatelessWidget {
                     )
                   ]),
                   Row(children: [
-                    Padding(
-                      padding: const EdgeInsets.only(right: 6.0),
+                    const Padding(
+                      padding: EdgeInsets.only(right: 6.0),
                       child: Icon(
                         Icons.file_present,
                         color: kJaunesombre,
@@ -234,7 +207,7 @@ class InfoGenerales extends StatelessWidget {
                         padding: const EdgeInsets.all(8.0),
                         child: Text(
                           infoClient['document'],
-                          style: TextStyle(
+                          style: const TextStyle(
                             fontSize: 17,
                             color: Colors.black54,
                             fontFamily: "Poppins-SemiBold",
@@ -243,7 +216,7 @@ class InfoGenerales extends StatelessWidget {
                         ),
                       ),
                     ),
-                    IconButton(
+                    const IconButton(
                       onPressed: null,
                       icon: Icon(
                         Icons.arrow_back_ios_outlined,
@@ -252,9 +225,9 @@ class InfoGenerales extends StatelessWidget {
                       ),
                     )
                   ]),
-                  Row(children: [
+                  Row(children: const [
                     Padding(
-                      padding: const EdgeInsets.only(right: 6.0),
+                      padding: EdgeInsets.only(right: 6.0),
                       child: Icon(
                         Icons.email,
                         color: kJaunesombre,
@@ -263,7 +236,7 @@ class InfoGenerales extends StatelessWidget {
                     ),
                     Expanded(
                       child: Padding(
-                        padding: const EdgeInsets.all(8.0),
+                        padding: EdgeInsets.all(8.0),
                         child: Text(
                           'Modifier ses informations de CNI',
                           style: TextStyle(
@@ -288,58 +261,15 @@ class InfoGenerales extends StatelessWidget {
               );
             }).toList(),
           ),
+          MaterialButton(
+            onPressed: () {
+              FirebaseAuth.instance.signOut();
+            },
+            color: kJauneclair,
+            child: const Text('Se deconnecter'),
+          ),
         ],
       ),
-    );
-  }
-}
-
-class VerificationIdentite extends StatelessWidget {
-  const VerificationIdentite({Key? key}) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: [
-        Text(
-          'VERIFICATION D \'IDENTITE',
-          style: kBodyStyleBouton4,
-        ),
-        BoutonLong(
-          buttonName: 'Identité validée',
-          couleurs: kVertclair,
-          kcouleurs: kBodyStyleBouton2,
-          onPressed: null,
-        ),
-        SizedBox(
-          height: 30,
-        ),
-        BoutonLong(
-          buttonName: 'Selfie Validé',
-          couleurs: kVertclair,
-          kcouleurs: kBodyStyleBouton2,
-          onPressed: null,
-        ),
-        SizedBox(
-          height: 40,
-        ),
-        Text(
-          'VERIFICATION ADRESSE',
-          style: kBodyStyleBouton4,
-        ),
-        BoutonLong(
-          buttonName: 'Vérification adresse',
-          couleurs: kJauneclair,
-          kcouleurs: TextStyle(
-            fontSize: 17,
-            color: Colors.black54,
-            fontFamily: "Poppins-SemiBold",
-            fontWeight: FontWeight.w700,
-          ),
-          onPressed: null,
-        ),
-      ],
     );
   }
 }

@@ -1,3 +1,5 @@
+// ignore_for_file: file_names
+
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:local_auth/local_auth.dart';
@@ -16,7 +18,9 @@ class LoginprintApp extends StatefulWidget {
 class _LoginprintAppState extends State<LoginprintApp> {
   final LocalAuthentication auth = LocalAuthentication();
 
+  // ignore: unused_field
   String _authorized = 'Pas Authorisé';
+  // ignore: unused_field
   bool _isAuthenticating = false;
 
   @override
@@ -24,21 +28,9 @@ class _LoginprintAppState extends State<LoginprintApp> {
     super.initState();
   }
 
-  Future<void> _checkBiometrics() async {
-    late bool canCheckBiometrics;
-    try {
-      canCheckBiometrics = await auth.canCheckBiometrics;
-    } on PlatformException {
-      canCheckBiometrics = false;
-    }
-    if (!mounted) {
-      return;
-    }
-
-    setState(() {});
-  }
-
+  // ignore: unused_element
   Future<void> _getAvailableBiometrics() async {
+    // ignore: unused_local_variable
     late List<BiometricType> availableBiometrics;
     try {
       availableBiometrics = await auth.getAvailableBiometrics();
@@ -75,6 +67,7 @@ class _LoginprintAppState extends State<LoginprintApp> {
         _isAuthenticating = false;
       });
     } on PlatformException catch (e) {
+      // ignore: avoid_print
       print(e);
       setState(() {
         _isAuthenticating = false;
@@ -93,6 +86,7 @@ class _LoginprintAppState extends State<LoginprintApp> {
     });
   }
 
+  // ignore: unused_element
   Future<void> _authenticateWithBiometrics() async {
     bool authenticated = false;
     try {
@@ -113,7 +107,6 @@ class _LoginprintAppState extends State<LoginprintApp> {
         _authorized = 'Authenticating';
       });
     } on PlatformException catch (e) {
-      print(e);
       setState(() {
         _isAuthenticating = false;
         _authorized = 'Error - ${e.message}';
@@ -130,6 +123,7 @@ class _LoginprintAppState extends State<LoginprintApp> {
     });
   }
 
+  // ignore: unused_element
   Future<void> _cancelAuthentication() async {
     await auth.stopAuthentication();
     setState(() => _isAuthenticating = false);
@@ -150,18 +144,16 @@ class _LoginprintAppState extends State<LoginprintApp> {
         child: ListView(
           padding: const EdgeInsets.only(top: 30),
           children: <Widget>[
-            Container(
-              height: 250.0,
-              width: 80.0,
-              decoration: const BoxDecoration(
-                image: DecorationImage(
-                  image: AssetImage(
-                    'assets/images/rxchange_2blanc.png',
-                  ),
-                ),
+            const SizedBox(height: 70),
+            Padding(
+              padding: const EdgeInsets.all(30.0),
+              child: Image.asset(
+                'assets/images/rxchange_2blanc.png',
+                width: 100,
+                height: 100,
               ),
             ),
-            Container(
+            SizedBox(
               width: size.width * 0.6,
               child: Column(
                 children: [
@@ -217,24 +209,31 @@ class _LoginprintAppState extends State<LoginprintApp> {
                     buttonName: ' S\'authentifier',
                     couleurs: kJaunesombre,
                     kcouleurs: kBodyStyleBouton1,
-                    onPressed: _authenticate,
+                    onTap: _authenticate,
                   ),
-                  Row(
-                    // mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      const Text('Se connecter avec un mot de passe ',
-                          style: kBodyStyleBouton2),
-                      MaterialButton(
-                        onPressed: () {
-                          Navigator.pushNamed(context, "Connectez-vous");
-                        },
-                        child: const Text(
-                          'Sign Up',
-                          style: kBodyStyleBouton2,
-                        ),
-                      ),
-                    ],
-                  ),
+                  // Row(
+                  //   mainAxisAlignment: MainAxisAlignment.center,
+                  //   children: [
+                  //     const Text(
+                  //       'Se connecter avec un mot de passe: ',
+                  //       style: TextStyle(
+                  //         fontSize: 15,
+                  //         color: kWhite,
+                  //         fontFamily: "Poppins-SemiBold",
+                  //         fontWeight: FontWeight.w200,
+                  //       ),
+                  //     ),
+                  //     MaterialButton(
+                  //       onPressed: () {
+                  //         Navigator.pushNamed(context, "Connectez-vous");
+                  //       },
+                  //       child: const Text(
+                  //         'Sign Up',
+                  //         style: kBodyStyleBouton2,
+                  //       ),
+                  //     ),
+                  //   ],
+                  // ),
                 ],
               ),
             ),
@@ -245,8 +244,12 @@ class _LoginprintAppState extends State<LoginprintApp> {
   }
 }
 
-enum _SupportState {
-  unknown,
-  supported,
-  unsupported,
-}
+// // ignore: unused_element
+// enum _SupportState {
+//   // ignore: unused_field
+//   unknown,
+//   // ignore: unused_field
+//   supported,
+//   // ignore: unused_field
+//   unsupported,
+// }

@@ -1,10 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:rx_change_3/palette.dart';
+import 'package:firebase_core/firebase_core.dart';
 import 'screens/screen.dart';
 
 Future main() async {
+  WidgetsFlutterBinding.ensureInitialized();
   await dotenv.load(fileName: ".env");
+  await Firebase.initializeApp();
   runApp(
     MaterialApp(
       debugShowCheckedModeBanner: false,
@@ -15,11 +18,8 @@ Future main() async {
       ),
       initialRoute: '/',
       routes: {
-        '/': (context) => const LoginprintApp(),
-        'Connectez-vous': (context) => const Login(),
+        '/': (context) => const MainPage(),
         'Mot de passe oublié': (context) => const ForgotPassword(),
-        'Creer un compte': (context) => const SignUp(),
-        'Se Connecter': (context) => const Accueil(),
         'Authentifier': (context) => const Accueil(),
         'mail de validation': (context) => const ForgotPassword(),
       },

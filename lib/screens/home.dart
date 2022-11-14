@@ -24,7 +24,7 @@ class Home extends StatelessWidget {
             child: IconButton(
               onPressed: () {
                 var route = MaterialPageRoute(builder: (BuildContext context) {
-                  return const profil();
+                  return const Profil();
                 });
                 Navigator.of(context).push(route);
               },
@@ -71,7 +71,7 @@ class Home extends StatelessWidget {
                       height: 15.0,
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(100.0),
-                        color: kRouge,
+                        color: Colors.red[600],
                       ),
                       child: const Center(child: Text('3')),
                     ),
@@ -302,7 +302,9 @@ class CryptoSection extends StatelessWidget {
                                   fontSize: 17,
                                   // fontFamily: "Poppins-Medium",
                                   fontWeight: FontWeight.w200,
-                                  color: crypto['signe'] ? kVertclair : kRouge,
+                                  color: crypto['signe']
+                                      ? kVertclair
+                                      : Colors.red[600],
                                 ),
                               ),
                             ],
