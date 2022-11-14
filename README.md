@@ -3,13 +3,11 @@
 
 
 # rx_change_3!
-<div style="width:60px ; height:60px">
-![Employee data](https://github.com/rosby17/apprxchange/blob/master/assets/images/rxchange_2noir.png "Employee Data title")
-</div>
 
-
-<img src="https://github.com/rosby17/apprxchange/blob/master/z_SignUp.png?raw=true" style=" width:60px ; height:60px "  >
- ![alt text](https://github.com/rosby17/apprxchange/blob/master/z_SignUp.png?raw=true) ![alt text](https://github.com/rosby17/apprxchange/blob/master/z_siign.jpg?raw=true)
+<img src="https://github.com/rosby17/apprxchange/blob/master/z_SignUp.png" style=" width:80px ; height:120px "  >
+<img src="https://github.com/rosby17/apprxchange/blob/master/z_siign.jpg" style=" width:80px ; height:120px "  >
+<img src="https://github.com/rosby17/apprxchange/blob/master/assets/images/rxchange_2noir.png" style=" width:80px ; height:120px "  >
+ ![alt text]() ![alt text](?raw=true)
 
 
 
