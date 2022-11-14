@@ -5,7 +5,7 @@
 # rx_change_3!
 
 
-![alt text](https://github.com/rosby17/apprxchange/blob/master/z_homepage.jpg?raw=true)
+![alt text]([https://github.com/rosby17/apprxchange/blob/master/z_homepage.jpg](https://github.com/rosby17/apprxchange/blob/master/assets/images/rxchange_2noir.png)?raw=true)
 
 Prerequis: 
 
