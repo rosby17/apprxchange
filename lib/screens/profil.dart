@@ -26,7 +26,7 @@ class _ProfilState extends State<Profil> {
               color: kVertclair,
               child: MenuSection(),
             ),
-            InfoGenerales(),
+            const InfoGenerales(),
           ],
         ),
       ),
@@ -113,26 +113,28 @@ class MenuSection extends StatelessWidget {
   }
 }
 
-class InfoGenerales extends StatelessWidget {
-  InfoGenerales({
-    Key? key,
-  }) : super(key: key);
-
-  final List infoClient = [
-    {
-      'photo': 'assets/photoClient/client1.jpg',
-      'nom': 'Mogo',
-      'prenom': 'Roosevelt',
-      'pseudo': 'rosby17',
-      'typeDeCompte': 'Compte principal',
-      'email': 'rooseveltmkr@gmail.com',
-      'document': 'Documents',
-      'CNI': ''
-    },
-  ];
+class InfoGenerales extends StatefulWidget {
+  const InfoGenerales({super.key});
 
   @override
+  State<InfoGenerales> createState() => _InfoGeneralesState();
+}
+
+class _InfoGeneralesState extends State<InfoGenerales> {
+  @override
   Widget build(BuildContext context) {
+    final List infoClient = [
+      {
+        'photo': 'assets/photoClient/client1.jpg',
+        'nom': 'Mogo',
+        'prenom': 'Roosevelt',
+        'pseudo': 'rosby17',
+        'typeDeCompte': 'Compte principal',
+        'email': 'rooseveltmkr@gmail.com',
+        'document': 'Documents',
+        'CNI': ''
+      },
+    ];
     final user = FirebaseAuth.instance.currentUser!;
     return Container(
       margin: const EdgeInsets.all(20),

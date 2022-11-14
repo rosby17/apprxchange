@@ -57,6 +57,7 @@ class ForgotPassword extends StatelessWidget {
                     height: 20,
                   ),
                   TextInputField(
+                    obscureText: false,
                     controller: emailController,
                     icon: Icons.mail,
                     hint: 'Email',

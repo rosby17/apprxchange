@@ -81,6 +81,7 @@ class _SignUpState extends State<SignUp> {
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             children: [
                               TextInputField(
+                                obscureText: false,
                                 icon: Icons.person,
                                 hint: 'username',
                                 inputAction: TextInputAction.done,
@@ -88,6 +89,7 @@ class _SignUpState extends State<SignUp> {
                                 controller: mdpController,
                               ),
                               TextInputField(
+                                obscureText: false,
                                 icon: Icons.email,
                                 hint: 'Email',
                                 inputAction: TextInputAction.done,
@@ -95,6 +97,7 @@ class _SignUpState extends State<SignUp> {
                                 controller: mdpController,
                               ),
                               TextInputField(
+                                obscureText: true,
                                 icon: Icons.lock,
                                 hint: 'Mot de passe',
                                 inputAction: TextInputAction.done,
@@ -102,6 +105,7 @@ class _SignUpState extends State<SignUp> {
                                 controller: mdpController,
                               ),
                               TextInputField(
+                                obscureText: false,
                                 icon: Icons.lock,
                                 hint: 'Confirmez le Mot de passe',
                                 inputAction: TextInputAction.done,

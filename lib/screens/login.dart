@@ -66,6 +66,7 @@ class _LoginState extends State<Login> {
                   ),
                   const SizedBox(height: 50),
                   TextInputField(
+                     obscureText: false,
                     controller: emailController,
                     icon: Icons.mail,
                     hint: 'Email',
@@ -74,6 +75,7 @@ class _LoginState extends State<Login> {
                   ),
                   const SizedBox(height: 20),
                   TextInputField(
+                     obscureText: false,
                     icon: Icons.lock,
                     hint: 'Mot de passe',
                     inputAction: TextInputAction.done,

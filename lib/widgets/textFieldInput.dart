@@ -10,12 +10,14 @@ class TextInputField extends StatelessWidget {
     required this.inputType,
     required this.inputAction,
     required this.controller,
+    required this.obscureText,
   }) : super(key: key);
 
   final IconData icon;
   final String hint;
   final TextInputType inputType;
   final TextInputAction inputAction;
+  final bool obscureText;
 
   final TextEditingController controller;
 
@@ -26,6 +28,7 @@ class TextInputField extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 25.0),
       child: TextFormField(
+        obscureText: obscureText,
         controller: controller,
         decoration: InputDecoration(
           enabledBorder: OutlineInputBorder(
