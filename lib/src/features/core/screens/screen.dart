@@ -1,0 +1,11 @@
+export 'dashboard/accueil.dart';
+export 'dashboard/portefeuille.dart';
+export 'dashboard/theAction.dart';
+export 'dashboard/market.dart';
+export 'dashboard/home.dart';
+export 'onboarding/onboardingScreen.dart';
+export 'splashScreen/splashScreen.dart';
+export 'dashboard/historique.dart';
+export '../../authentification/mainPage.dart';
+export '../../authentification/authPage.dart';
+export '../../authentification/loginSignup/forgotPassword.dart';
