@@ -1,3 +1,4 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:line_awesome_flutter/line_awesome_flutter.dart';
 import 'package:rx_change_3/src/common_widgets/widgets.dart';
@@ -13,14 +14,37 @@ class UpdateProfil extends StatefulWidget {
 }
 
 class _UpdateProfilState extends State<UpdateProfil> {
+  bool? created;
+  var balance;
+  var credentials;
+  int myAmount = 5;
+  var pro_pic;
+  var u_name;
+
   @override
   Widget build(BuildContext context) {
     var isDark = MediaQuery.of(context).platformBrightness == Brightness.dark;
+    var iconColor = isDark ? kWhite : kBlack;
+    var buttonColor = isDark ? kVertclair : kJauneclair;
+
+    final user = FirebaseAuth.instance.currentUser;
+    if (user?.photoURL == null) {
+      pro_pic = "assets/images/roosevelt.jpg";
+    } else {
+      pro_pic = user!.photoURL;
+    }
+    if (user?.displayName == null) {
+      u_name = "User Name";
+    } else {
+      u_name = user!.displayName;
+    }
     return Scaffold(
       appBar: AppBar(
         leading: IconButton(
             onPressed: () {}, icon: const Icon(LineAwesomeIcons.angle_left)),
-        title: Text(tEditProfil, style: Theme.of(context).textTheme.headline4),
+        title: Text(tEditProfil,
+            textAlign: TextAlign.center,
+            style: Theme.of(context).textTheme.headline4),
       ),
       body: SingleChildScrollView(
         child: Container(
@@ -33,8 +57,14 @@ class _UpdateProfilState extends State<UpdateProfil> {
                     width: 120,
                     height: 120,
                     child: ClipRRect(
-                        borderRadius: BorderRadius.circular(100),
-                        child: const Image(image: AssetImage(tProfileImage))),
+                      borderRadius: BorderRadius.circular(100),
+                      child: Container(
+                          decoration: BoxDecoration(
+                              shape: BoxShape.circle,
+                              color: Colors.white,
+                              image: DecorationImage(
+                                  image: NetworkImage(pro_pic), scale: 0.1))),
+                    ),
                   ),
                   Positioned(
                     bottom: 0,
@@ -44,10 +74,10 @@ class _UpdateProfilState extends State<UpdateProfil> {
                         height: 35,
                         decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(100),
-                          color: kJauneclair,
+                          color: buttonColor,
                         ),
-                        child: const Icon(LineAwesomeIcons.camera,
-                            size: 20.0, color: kBlack)),
+                        child: Icon(LineAwesomeIcons.camera,
+                            size: 20.0, color: iconColor)),
                   )
                 ],
               ),
@@ -88,11 +118,11 @@ class _UpdateProfilState extends State<UpdateProfil> {
                               MaterialPageRoute(
                                   builder: (context) => const UpdateProfil())),
                           style: ElevatedButton.styleFrom(
-                              backgroundColor: kJauneclair,
+                              backgroundColor: buttonColor,
                               side: BorderSide.none,
                               shape: const StadiumBorder()),
-                          child: const Text(tEditProfil,
-                              style: TextStyle(color: kBlack)),
+                          child: Text(tEditProfil,
+                              style: Theme.of(context).textTheme.bodyText1),
                         ),
                       ),
                     ),
@@ -102,13 +132,14 @@ class _UpdateProfilState extends State<UpdateProfil> {
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
-                          const Text.rich(TextSpan(
+                          Text.rich(TextSpan(
                               text: tJoined,
-                              style: TextStyle(color: kBlack),
+                              style: Theme.of(context).textTheme.bodyText1,
                               children: [
                                 TextSpan(
                                     text: tJoinedAt,
-                                    style: TextStyle(color: kBlack)),
+                                    style:
+                                        Theme.of(context).textTheme.bodyText1),
                               ])),
                           ElevatedButton(
                             onPressed: () => Navigator.of(context).push(

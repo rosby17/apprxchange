@@ -244,13 +244,3 @@ class _LoginprintAppState extends State<LoginprintApp> {
     );
   }
 }
-
-// // ignore: unused_element
-// enum _SupportState {
-//   // ignore: unused_field
-//   unknown,
-//   // ignore: unused_field
-//   supported,
-//   // ignore: unused_field
-//   unsupported,
-// }

@@ -4,36 +4,28 @@ import 'package:rx_change_3/src/constants/constants.dart';
 
 class ButtonContainer extends StatelessWidget {
   final String title;
-  final Color color;
   final VoidCallback onTap;
-  final int? value;
-  const ButtonContainer(
-      {super.key,
-      required this.title,
-      required this.color,
-      required this.onTap,
-      this.value});
+  final bool active;
+  const ButtonContainer({
+    super.key,
+    required this.title,
+    required this.onTap,
+    required this.active,
+  });
 
   @override
   Widget build(BuildContext context) {
-    return InkWell(
-      onTap: onTap,
-      child: Container(
-        height: 65,
-        width: MediaQuery.of(context).size.width * 0.6,
-        decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(5),
-          color: color,
-        ),
-        child: Center(
-          child: Text(
-            title,
-            textAlign: TextAlign.left,
-            style: const TextStyle(
-                fontSize: 20, fontWeight: FontWeight.bold, color: kWhite),
-          ),
-        ),
+    return Container(
+      height: 45,
+      width: MediaQuery.of(context).size.width / 3.5,
+      margin: const EdgeInsets.all(5),
+      decoration: BoxDecoration(
+        borderRadius: BorderRadius.circular(10),
+        color: active ? kJauneclair : Colors.blueGrey.withOpacity(.10),
       ),
+      child: TextButton(
+          onPressed: onTap,
+          child: Text(title, style: Theme.of(context).textTheme.headline3)),
     );
   }
 }

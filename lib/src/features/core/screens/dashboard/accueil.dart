@@ -16,8 +16,8 @@ class _AccueilState extends State<Accueil> {
   int _id = 0;
   static List<Widget> pageOptions = <Widget>[
     const Home(),
-    const Market(),
-    const Historique(),
+    const Historiques(),
+    const TheActions(),
     const Portefeuille(),
   ];
 
@@ -34,13 +34,13 @@ class _AccueilState extends State<Accueil> {
     _item.add(
       const BottomNavigationBarItem(
         icon: Icon(Icons.compare_arrows_outlined),
-        label: "Actions",
+        label: "Historiques",
       ),
     );
     _item.add(
       const BottomNavigationBarItem(
         icon: Icon(Icons.auto_graph_sharp),
-        label: "Historique",
+        label: "Actions",
       ),
     );
     // _item.add(

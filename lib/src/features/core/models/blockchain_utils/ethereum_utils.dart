@@ -13,9 +13,8 @@ class EthereumUtils {
 
   void initial() {
     httpClient = http.Client();
-    String infuraApi =
-        "https://goerli.infura.io/v3/32cf5208a6ac471686e5b08c91ac01ad";
-    // String ganachewsApi = "ws://192.168.43.159:7545";
+    String infuraApi = "HTTP://192.168.43.159:7545";
+    String ganachewsApi = "ws://192.168.43.159:75455";
     web3client = Web3Client(infuraApi, httpClient);
   }
 

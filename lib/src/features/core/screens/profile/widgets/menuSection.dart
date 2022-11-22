@@ -20,8 +20,9 @@ class MenuSection extends StatelessWidget {
   final Color? textColor;
   @override
   Widget build(BuildContext context) {
-    var isDark = MediaQuery.of(context).platformBrightness == Brightness.dark;
+    var isDark = MediaQuery.of(context).platformBrightness == Brightness.light;
     var iconColor = isDark ? kVertclair : kJauneclair;
+    // var textColors = isDark ? kWhite : kBlack;
     return ListTile(
       onTap: onPress,
       leading: Container(
@@ -45,10 +46,10 @@ class MenuSection extends StatelessWidget {
               height: 30,
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(100),
-                color: kBlack.withOpacity(0.1),
+                color: iconColor.withOpacity(0.1),
               ),
-              child: const Icon(LineAwesomeIcons.angle_right,
-                  size: 18.0, color: kBlack))
+              child: Icon(LineAwesomeIcons.angle_right,
+                  size: 18.0, color: textColor))
           : null,
     );
   }

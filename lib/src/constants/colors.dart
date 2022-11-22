@@ -6,7 +6,8 @@ const Color kBlack = Colors.black;
 const Color kBlackS = Colors.black26;
 
 // Parametre theme vert
-const Color kVertclair = Color(0XFF079A24);
+const Color kVertclair = Color.fromARGB(255, 12, 153, 17);
+//  Color(0XFF079A24);
 const Color kVertsombre = Color(0XFF045414);
 
 // Parametre theme jaune
@@ -17,7 +18,7 @@ const kJauneclair = Color(0XffFFD600);
 const kOnboarding1Color = Color(0XffEDEDED);
 const kOnboarding2Color = Color(0XffFFD600);
 
-const kOnboarding3Color = Color(0Xff33722A);
+const kOnboarding3Color = Color.fromARGB(240, 255, 242, 205);
 
 const TextStyle kBodyStyleZone = TextStyle(
   fontSize: 14,
