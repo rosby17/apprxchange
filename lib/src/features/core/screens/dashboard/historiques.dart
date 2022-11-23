@@ -63,14 +63,14 @@ class _HistoriquesState extends State<Historiques> {
                                   child: Material(
                                       color: kBlack,
                                       child: InkWell(
-                                        splashColor: kWhite,
+                                        splashColor: kJauneclair,
                                         child: SizedBox(
-                                            width: 56,
-                                            height: 56,
+                                            width: 45,
+                                            height: 45,
                                             child: Icon(
-                                              Icons.account_balance_wallet,
+                                              Icons.compare_arrows_outlined,
                                               color: kWhite,
-                                              size: 35,
+                                              size: 15,
                                             )),
                                       )),
                                 ),
@@ -81,7 +81,6 @@ class _HistoriquesState extends State<Historiques> {
                                   child: Text('No recents transactions'),
                                 ),
                               ]),
-                          Text('midle'),
                         ]),
                   )),
             ),

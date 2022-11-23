@@ -5,6 +5,8 @@ import 'package:rx_change_3/src/features/core/screens/dashboard/firestore.dart';
 import 'package:rx_change_3/src/features/core/screens/dashboard/actions.dart';
 import 'package:rx_change_3/src/features/core/screens/dashboard/walletCreation.dart';
 
+import '../../../../constants/colors.dart';
+
 class CreateWallet extends StatefulWidget {
   const CreateWallet({Key? key}) : super(key: key);
 
@@ -131,7 +133,7 @@ class _CreateWallet extends State<CreateWallet> {
                     const Divider(),
                     const Center(
                       child: Text(
-                        "votre Addresse publique: ",
+                        "Votre Addresse publique: ",
                         style: TextStyle(
                           fontSize: 18,
                         ),
@@ -154,7 +156,21 @@ class _CreateWallet extends State<CreateWallet> {
                         child: const Text(
                           "Retour au portefeuille!",
                           style: TextStyle(
-                            color: Colors.grey,
+                            color: kWhite,
+                            fontSize: 18,
+                          ),
+                        ),
+                      ),
+                    ),
+                    Center(
+                      child: ElevatedButton(
+                        onPressed: () {
+                          selected = 0;
+                        },
+                        child: const Text(
+                          "Changer adresse",
+                          style: TextStyle(
+                            color: kWhite,
                             fontSize: 18,
                           ),
                         ),

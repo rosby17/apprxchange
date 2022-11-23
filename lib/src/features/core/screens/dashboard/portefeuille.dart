@@ -178,42 +178,6 @@ class _PortefeuilleState extends State<Portefeuille> {
                 ],
               ),
             ),
-            SliverToBoxAdapter(
-              child: SizedBox(
-                width: double.infinity,
-                height: MediaQuery.of(context).size.height / 1.3,
-                child: ListView.builder(
-                    itemCount: coinList.length,
-                    itemBuilder: (context, index) {
-                      return SingleChildScrollView(
-                        child: CoinCard(
-                            change: coinList[index].change.toDouble(),
-                            changePercentage:
-                                coinList[index].changePercentage.toDouble(),
-                            image: coinList[index].image,
-                            name: coinList[index].name,
-                            price: coinList[index].price.toDouble(),
-                            rank: coinList[index].rank.toInt(),
-                            symbol: coinList[index].symbol),
-                      );
-                    }),
-              ),
-            ),
-            SliverToBoxAdapter(
-              child: Container(
-                margin: const EdgeInsets.only(top: 30, right: 30),
-                alignment: Alignment.bottomRight,
-                child: FloatingActionButton(
-                  onPressed: () {
-                    Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                            builder: (context) => const CreateWallet()));
-                  },
-                  child: const Icon(Icons.add),
-                ),
-              ),
-            ),
           ],
         ),
       ),

@@ -93,7 +93,7 @@ class _TheActionsState extends State<TheActions> {
     DeployedContract contract = await loadContract();
     final ethFunction = contract.function(functionName);
     EthPrivateKey key = EthPrivateKey.fromHex(privAddress);
-    Transaction transaction = await Transaction.callContract(
+    Transaction transaction = Transaction.callContract(
         contract: contract,
         function: ethFunction,
         parameters: args,
@@ -118,93 +118,81 @@ class _TheActionsState extends State<TheActions> {
       u_name = user!.displayName;
     }
     return Scaffold(
-        appBar: AppBar(),
         body: ListView(
-          children: [
-            Container(
-              height: 150,
-              alignment: Alignment.center,
-              child: Container(
-                  decoration: BoxDecoration(
-                      shape: BoxShape.circle,
-                      color: Colors.white,
-                      image: DecorationImage(
-                          image: NetworkImage(pro_pic), scale: 0.1))),
+      children: [
+        Container(
+          height: 150,
+          alignment: Alignment.center,
+          child: Container(
+              decoration: BoxDecoration(
+                  shape: BoxShape.circle,
+                  color: Colors.white,
+                  image: DecorationImage(
+                      image: NetworkImage(pro_pic), scale: 0.1))),
+        ),
+        Container(
+          margin: const EdgeInsets.all(20),
+          child: Text(u_name, style: Theme.of(context).textTheme.subtitle1),
+        ),
+        Container(
+          margin: const EdgeInsets.all(5),
+          alignment: Alignment.center,
+          height: 100,
+          width: MediaQuery.of(context).size.width,
+          child: Text(
+            "Balance",
+            style: Theme.of(context).textTheme.headline1,
+          ),
+        ),
+        Container(
+          margin: const EdgeInsets.all(5),
+          alignment: Alignment.center,
+          height: 50,
+          width: MediaQuery.of(context).size.width,
+          // color: Colors.black,
+          child: Center(
+            child: Text(
+              balance == null ? "0 USD" : "${balance}USD",
+              style: const TextStyle(
+                  fontSize: 50,
+                  color: Colors.blueAccent,
+                  fontWeight: FontWeight.bold),
             ),
-            Container(
-              margin: const EdgeInsets.all(20),
-              child: Text(
-                u_name,
-                style: const TextStyle(
-                    fontSize: 20,
-                    color: Colors.blueAccent,
-                    fontWeight: FontWeight.bold),
-              ),
-            ),
-            Container(
-              margin: const EdgeInsets.all(5),
-              alignment: Alignment.center,
-              height: 100,
-              width: MediaQuery.of(context).size.width,
-              // color: Colors.black,
-              child: const Text(
-                "Balance",
-                style: TextStyle(
-                    fontSize: 70,
-                    color: Colors.grey,
-                    fontWeight: FontWeight.bold),
-              ),
-            ),
-            // Container(
-            //   margin: const EdgeInsets.all(5),
-            //   alignment: Alignment.center,
-            //   height: 50,
-            //   width: MediaQuery.of(context).size.width,
-            //   // color: Colors.black,
-            //   child: Text(
-            //     balance == null ? "0 GLD" : "${balance}\GLD",
-            //     style: const TextStyle(
-            //         fontSize: 50,
-            //         color: Colors.blueAccent,
-            //         fontWeight: FontWeight.bold),
-            //   ),
-            // ),
-            // Container(
-            //     margin: const EdgeInsets.all(20),
-            //     child: ElevatedButton(
-            //       onPressed: () async {
-            //         var response = await sendCoin();
-            //         print(response);
-            //       },
-            //       child: const Text("Send Money"),
-            //       style: ButtonStyle(
-            //           backgroundColor:
-            //               MaterialStateProperty.all<Color>(Colors.green)),
-            //     )),
-            // Container(
-            //     margin: const EdgeInsets.all(10),
-            //     child: ElevatedButton(
-            //       onPressed: () {
-            //         credentials != null
-            //             ? getBalance(credentials)
-            //             : print("credentials null");
-            //       },
-            //       child: const Text("Refresh Page"),
-            //     )),
-            Container(
-              margin: const EdgeInsets.only(top: 30, right: 30),
-              alignment: Alignment.bottomRight,
-              child: FloatingActionButton(
-                onPressed: () {
-                  Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                          builder: (context) => const CreateWallet()));
-                },
-                child: const Icon(Icons.add),
-              ),
-            ),
-          ],
-        ));
+          ),
+        ),
+        Container(
+            margin: const EdgeInsets.all(40),
+            child: ElevatedButton(
+              onPressed: () async {
+                var response = await sendCoin();
+                print(response);
+              },
+              child: const Text("Envoyer"),
+            )),
+        Container(
+            margin: const EdgeInsets.all(40),
+            child: ElevatedButton(
+              onPressed: () {
+                credentials != null
+                    ? getBalance(credentials)
+                    : print("credentials null");
+              },
+              child: const Text("Rafraichir le solde"),
+            )),
+        Container(
+          margin: const EdgeInsets.only(top: 30, right: 30),
+          alignment: Alignment.bottomRight,
+          child: FloatingActionButton(
+            onPressed: () {
+              Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                      builder: (context) => const CreateWallet()));
+            },
+            child: const Icon(Icons.add),
+          ),
+        ),
+      ],
+    ));
   }
 }
